@@ -4,7 +4,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursorFollower = document.querySelector('.cursor-follower');
     const hoverElements = document.querySelectorAll('[data-cursor-hover]');
     const cursorTextElements = document.querySelectorAll('[data-cursor-text]');
-    
+
+    const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+    };
+
+        if (isTouchDevice()) {
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        if (cursor) cursor.style.display = 'none';
+        if (cursorFollower) cursorFollower.style.display = 'none';
+        
+        // Eliminar eventos hover para móviles
+        document.querySelectorAll('[data-cursor-hover]').forEach(el => {
+            el.style.cursor = 'pointer'; // Restaurar cursor normal
+        });
+    }
+
     if (cursor && cursorFollower) {
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
@@ -177,4 +196,27 @@ document.addEventListener('DOMContentLoaded', function() {
         yearElement.textContent = new Date().getFullYear();
     }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+    
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+});
     
