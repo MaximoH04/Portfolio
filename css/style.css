@@ -624,6 +624,10 @@ input:checked + .slider:before {
 @media (hover: none) {
     .project-card {
         transform: none !important;
+    button,a {
+  touch-action: manipulation;
+    }
+
     }
     
     .project-card:active {
@@ -915,6 +919,21 @@ input:checked + .slider:before {
 }
 
 /* Responsive */
+
+@media (max-width: 900px) and (min-width: 601px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .project-info {
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+}
+
 @media (max-width: 1024px) {
     .about-grid {
         grid-template-columns: 1fr;
