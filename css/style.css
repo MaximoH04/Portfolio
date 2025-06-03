@@ -235,6 +235,7 @@ input:checked + .slider:before {
         align-items: center;
         width: 28px;
         height: 24px;
+        overflow-y: auto;
         background: none;
         border: none;
         position: absolute;
@@ -286,9 +287,11 @@ input:checked + .slider:before {
 
     
     .nav-link {
+        color: var(--black);
+        font-size: 1.2rem;
         padding: 1rem 0;
-        border-bottom: 1px solid var(--dark-gray);
-        color:black
+        width: 100%;
+        text-align: left;
     }
     
         body.dark-mode .nav-link {
@@ -1090,21 +1093,6 @@ input:checked + .slider:before {
         align-items: flex-start;
     }
     
-    .nav {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 1rem;
-    }
-    
-    .nav.active {
-        display: flex;
-    }
-    
-    .nav-link {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
     
     /* Hero Section */
     .hero {
