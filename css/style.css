@@ -224,23 +224,12 @@ input:checked + .slider:before {
     width: 100%;
 }
 
-/* Agrega esto a tu CSS */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    width: 32px;
-    height: 24px;
-    position: relative;
-    z-index: 100;
-    cursor: pointer;
-}
 
 .menu-line {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--text-primary);
+    background-color: var(--black);
     transition: all 0.3s ease;
 }
 
@@ -265,12 +254,27 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 32px;
+            background: none;
+            border: none;
+            z-index: 100;
+        }
+
+        .menu-line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--black);
+            transition: all 0.3s ease;
+        }
     .nav {
         position: fixed;
         top: 0;
@@ -298,6 +302,7 @@ input:checked + .slider:before {
     .switch-container {
         margin-top: 2rem;
     }
+    
 }
 
 /* Hero */
@@ -1106,16 +1111,6 @@ input:checked + .slider:before {
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 24px;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-    
     /* Hero Section */
     .hero {
         padding-top: 100px;
@@ -1207,15 +1202,6 @@ input:checked + .slider:before {
 }
 
 /* Menu Mobile */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    width: 32px;
-    height: 32px;
-    position: relative;
-    z-index: 100;
-}
 
 .menu-line {
     display: block;
@@ -1246,40 +1232,6 @@ input:checked + .slider:before {
     opacity: 0;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background-color: var(--primary-bg);
-        flex-direction: column;
-        padding: 100px 2rem 2rem;
-        transition: right 0.3s ease;
-        z-index: 90;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    }
-    
-    .nav.active {
-        right: 0;
-    }
-    
-    .nav-link {
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--secondary-bg);
-    }
-    
-    .switch-container {
-        margin-top: 2rem;
-    }
-}
 
 @media (max-width: 480px) {
     /* Header */
@@ -1664,6 +1616,12 @@ input:checked + .slider:before {
   .form-container .form-submit-btn {
     font-size: 14px;
     padding: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
   }
 }
 
