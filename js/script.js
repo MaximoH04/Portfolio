@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.classList.add("fade-out");
+
+            // Opcional: eliminar el loader del DOM después de desvanecerse
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500); // tiempo en ms que coincide con el transition
+        });
+        
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
     
