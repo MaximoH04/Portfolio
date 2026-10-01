@@ -176,7 +176,7 @@ body.nav-open { overflow: hidden; }
 /* Projects Layout */
 .section-work { padding: 150px var(--padding-x); }
 .section-title { margin-bottom: 100px; border-bottom: 1px solid var(--border); padding-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end;}
-.section-title h2 { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; }
+.section-title h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 5vw, 3rem); text-transform: uppercase; }
 .section-title .index { font-family: var(--font-display); font-size: 1.5rem; color: var(--text-dim); }
 
 .project-row {
@@ -267,6 +267,22 @@ body.nav-open { overflow: hidden; }
     .top-header { padding: 20px var(--padding-x); gap: 20px; }
     .nav-toggle { order: 2; margin-left: auto; }
     .theme-switch-wrapper { order: 3; }
+
+    .section-work { padding: 100px var(--padding-x); }
+    .section-block { padding: 80px var(--padding-x); }
+    .section-title { margin-bottom: 60px; }
+    .project-row, .project-row.reverse { margin-bottom: 90px; }
+    .parallax-img-container { height: 340px; }
+
+    .timeline { padding-left: 30px; }
+    .timeline-item { padding-bottom: 50px; }
+    .timeline-item::before { left: -30px; }
+
+    /* La fecha pasa arriba del título en lugar de ir en su propia columna */
+    .formacion-item { grid-template-columns: 1fr; gap: 10px; }
+    .formacion-date { padding-top: 0; }
+
+    .subsection-title { margin-top: 70px; }
 }
 /* ---------------------------------------------------------------
    Movimiento reducido
@@ -286,3 +302,87 @@ body.nav-open { overflow: hidden; }
     .cursor-dot, .cursor-circle { display: none; }
     * { cursor: auto; }
 }
+
+/* ---------------------------------------------------------------
+   Secciones de contenido (Experiencia, Servicios, Formación)
+   --------------------------------------------------------------- */
+.section-block { padding: 120px var(--padding-x); }
+
+.subsection-title {
+    font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;
+    letter-spacing: 1px; margin: 110px 0 50px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+
+/* ---------- Experiencia: timeline ---------- */
+.timeline { list-style: none; position: relative; padding-left: 40px; }
+.timeline::before {
+    content: ''; position: absolute; left: 5px; top: 10px; bottom: 10px;
+    width: 1px; background: var(--border);
+}
+.timeline-item { position: relative; padding-bottom: 70px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+    content: ''; position: absolute; left: -40px; top: 8px;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--bg); border: 1px solid var(--text-dim);
+}
+/* El puesto actual se marca lleno */
+.timeline-item:first-child::before { background: var(--text); border-color: var(--text); }
+
+.timeline-date {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-dim); margin-bottom: 12px;
+}
+.timeline-role { font-size: clamp(1.3rem, 2.5vw, 1.75rem); line-height: 1.2; margin-bottom: 6px; }
+.timeline-org {
+    font-size: 0.95rem; color: var(--accent); margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+.timeline-desc { color: var(--text-dim); font-size: 1.05rem; line-height: 1.7; max-width: 62ch; }
+
+/* ---------- Formación ---------- */
+.formacion { list-style: none; }
+.formacion-item {
+    display: grid; grid-template-columns: 200px 1fr; gap: 30px;
+    padding: 32px 0; border-bottom: 1px solid var(--border);
+}
+.formacion-item:first-child { border-top: 1px solid var(--border); }
+.formacion-date {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-dim); padding-top: 5px;
+}
+.formacion-item h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.3; margin-bottom: 6px; }
+.formacion-org { color: var(--accent); font-size: 0.95rem; }
+.formacion-nota {
+    color: var(--text-dim); font-size: 0.92rem; line-height: 1.6;
+    margin-top: 12px; max-width: 55ch;
+}
+
+/* ---------- Certificaciones ---------- */
+.certs {
+    list-style: none; display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.cert-card {
+    display: flex; flex-direction: column; gap: 6px;
+    padding: 30px; border: 1px solid var(--border); background: var(--surface);
+}
+.cert-date {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-dim);
+}
+.cert-card h4 { font-size: 1.1rem; line-height: 1.3; font-weight: 600; }
+.cert-org { font-size: 0.9rem; color: var(--accent); }
+.cert-id {
+    font-size: 0.8rem; color: var(--text-dim); margin-top: auto; padding-top: 18px;
+    letter-spacing: 0.5px;
+}
+.cert-link {
+    display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+    margin-top: auto; padding-top: 18px;
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--border-strong); padding-bottom: 3px;
+    transition: border-color 0.3s ease;
+}
+.cert-link:hover { border-bottom-color: var(--text); }
