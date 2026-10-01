@@ -392,3 +392,22 @@ body.nav-open { overflow: hidden; }
     transition: border-color 0.3s ease;
 }
 .cert-link:hover { border-bottom-color: var(--text); }
+
+/* ---------- Skills ---------- */
+.skills-grid {
+    display: grid; gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.skills-group h3 {
+    font-family: var(--font-display); font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim);
+    padding-bottom: 16px; margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+.skills-group ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.skills-group li {
+    font-size: 0.95rem; padding: 8px 18px;
+    border: 1px solid var(--border-strong); border-radius: 50px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+.skills-group li:hover { border-color: var(--text); }
