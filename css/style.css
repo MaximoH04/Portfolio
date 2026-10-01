@@ -187,9 +187,38 @@ body.nav-open { overflow: hidden; }
 .project-row.reverse .project-info { order: 2; }
 .project-row.reverse .project-img { order: 1; }
 
-.project-info h3 { font-size: 3rem; margin-bottom: 20px; line-height: 1; }
-.project-info p { color: var(--text-dim); margin-bottom: 30px; font-size: 1.1rem; }
-.tags span { margin-right: 15px; font-size: 0.9rem; border: 1px solid var(--border-strong); padding: 5px 15px; border-radius: 50px; }
+.project-info h3 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px; line-height: 1; }
+.project-info p { color: var(--text-dim); margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6; }
+.project-info .project-period {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 14px; color: var(--text-dim);
+}
+.tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tags span { font-size: 0.85rem; border: 1px solid var(--border-strong); padding: 5px 15px; border-radius: 50px; }
+
+/* Grilla compacta de sitios para clientes */
+.client-sites { margin-top: 40px; }
+.client-sites-title {
+    font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 40px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+.client-grid {
+    list-style: none; display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.client-card a {
+    display: flex; flex-direction: column; gap: 6px; height: 100%;
+    padding: 28px; border: 1px solid var(--border); background: var(--surface);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.client-card a:hover { border-color: var(--border-strong); transform: translateY(-4px); }
+.client-name { font-size: 1.2rem; font-weight: 600; }
+.client-type { font-size: 0.85rem; color: var(--text-dim); }
+.client-go {
+    margin-top: auto; padding-top: 18px; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim);
+}
 
 .btn-arrow { display: inline-flex; align-items: center; gap: 10px; margin-top: 40px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 5px; }
 .btn-arrow i { transform: rotate(-45deg); transition: 0.3s; }
