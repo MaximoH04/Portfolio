@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Máximo Hidalgo</title>
+    <meta name="description" content="Todos los proyectos de Máximo Hidalgo: sitios web para clientes y sistemas a medida para negocios. Buenos Aires, Argentina.">
+    <link rel="canonical" href="https://portfolio-maximo-hidalgo.vercel.app/proyectos.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Máximo Hidalgo">
+    <meta property="og:title" content="Proyectos | Máximo Hidalgo">
+    <meta property="og:description" content="Sitios web para clientes y sistemas a medida para negocios.">
+    <meta property="og:url" content="https://portfolio-maximo-hidalgo.vercel.app/proyectos.html">
+    <meta property="og:image" content="https://portfolio-maximo-hidalgo.vercel.app/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0e0e0e">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-circle" aria-hidden="true"></div>
+
+    <header class="top-header">
+        <a href="index.html" class="logo">Máximo Hidalgo</a>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+            <a href="proyectos.html" class="magnetic-link" aria-current="page">Proyectos</a>
+            <a href="index.html#experience" class="magnetic-link">Experiencia</a>
+            <a href="index.html#services" class="magnetic-link">Servicios</a>
+            <a href="index.html#about" class="magnetic-link">Sobre mí</a>
+            <a href="index.html#contact" class="magnetic-link">Contacto</a>
+        </nav>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="visually-hidden">Abrir menú</span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false">
+            <span class="visually-hidden">Modo claro</span>
+            <span class="theme-toggle-track" aria-hidden="true">
+                <span class="theme-toggle-knob"></span>
+                <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="4.2"/>
+                    <path d="M12 1.8v2.4M12 19.8v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M1.8 12h2.4M19.8 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/>
+                </svg>
+                <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24">
+                    <path d="M20.8 13.3A8.6 8.6 0 1 1 11.2 3.2a6.7 6.7 0 0 0 9.6 10.1z"/>
+                </svg>
+            </span>
+        </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="index.html#experience">Experiencia</a>
+        <a href="index.html#services">Servicios</a>
+        <a href="index.html#education">Formación</a>
+        <a href="index.html#about">Sobre mí</a>
+        <a href="index.html#contact">Contacto</a>
+    </nav>
+
+    <main id="main" class="pagina">
+        <header class="pagina-header">
+            <p class="pagina-eyebrow">Trabajo</p>
+            <h1 class="pagina-title">Proyectos</h1>
+            <p class="pagina-lead">
+                Sitios web para clientes y sistemas a medida para negocios. En los que
+                tienen página de caso vas a encontrar cómo se trabajó, no sólo el
+                resultado.
+            </p>
+        </header>
+
+        <!-- Filtros. Si en algún momento queda un solo tipo de proyecto,
+             conviene sacar la barra entera. -->
+        <div class="filtros" role="group" aria-label="Filtrar proyectos por tipo">
+            <button type="button" class="filtro is-active" data-filtro="todos" aria-pressed="true">
+                Todos <span class="filtro-n" data-contador="todos"></span>
+            </button>
+            <button type="button" class="filtro" data-filtro="web" aria-pressed="false">
+                Sitios web <span class="filtro-n" data-contador="web"></span>
+            </button>
+            <button type="button" class="filtro" data-filtro="sistema" aria-pressed="false">
+                Sistemas a medida <span class="filtro-n" data-contador="sistema"></span>
+            </button>
+        </div>
+
+        <!-- ===============================================================
+             CÓMO SUMAR UN PROYECTO
+
+             Copiá un <article class="proyecto-card"> y cambiá:
+               data-tipo   "web" o "sistema" (es lo que usan los filtros)
+               data-destacado  ponelo sólo si querés que además salga en
+                               la portada; hoy la portada muestra los dos
+                               que tienen este atributo
+               href        la página de caso, o el sitio en vivo
+               img         1200x760 en WebP
+
+             Si el proyecto NO tiene página de caso, usá la variante de
+             "sitio en vivo": href al sitio, con target y rel, y el texto
+             del pie en "Ver sitio".
+             =============================================================== -->
+        <div class="proyectos-grid" id="proyectos-grid">
+
+            <article class="proyecto-card" data-tipo="sistema" data-destacado>
+                <a href="caso-control-acceso-dni.html" class="proyecto-card-link">
+                    <span class="proyecto-card-img">
+                        <img src="assets/images/proyecto-afa-dni.webp"
+                             alt="Ilustración de la interfaz: un documento con código de barras PDF417 siendo escaneado, junto a un panel con el registro de entradas y salidas"
+                             width="1200" height="760" loading="lazy" decoding="async">
+                    </span>
+                    <span class="proyecto-card-body">
+                        <span class="proyecto-card-meta">Sistema a medida · 2025</span>
+                        <span class="proyecto-card-title">Control de Acceso por DNI</span>
+                        <span class="proyecto-card-desc">
+                            Registro de ingreso a oficinas leyendo el código PDF417 del DNI,
+                            con historial por visitante y exportación a Excel.
+                        </span>
+                        <span class="tags">
+                            <span>Python</span><span>PDF417</span><span>Excel</span>
+                        </span>
+                        <span class="proyecto-card-cta">Ver caso <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+            </article>
+
+            <article class="proyecto-card" data-tipo="web" data-destacado>
+                <a href="caso-nimat-web.html" class="proyecto-card-link">
+                    <span class="proyecto-card-img">
+                        <img src="assets/images/proyecto-nimat-web.webp"
+                             alt="Captura de la portada del sitio de Nimat Solutions"
+                             width="1200" height="760" loading="lazy" decoding="async">
+                    </span>
+                    <span class="proyecto-card-body">
+                        <span class="proyecto-card-meta">Sitio institucional · 2025</span>
+                        <span class="proyecto-card-title">Nimat Solutions</span>
+                        <span class="proyecto-card-desc">
+                            Sitio para una empresa de soluciones informáticas y de seguridad.
+                            Diseño y desarrollo completo.
+                        </span>
+                        <span class="tags">
+                            <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+                        </span>
+                        <span class="proyecto-card-cta">Ver caso <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+            </article>
+
+            <!-- PLANTILLA — sitio sin página de caso. Descomentá y duplicá.
+
+            <article class="proyecto-card" data-tipo="web">
+                <a href="https://sitio-del-cliente.com" class="proyecto-card-link"
+                   target="_blank" rel="noopener noreferrer">
+                    <span class="proyecto-card-img">
+                        <img src="assets/images/proyecto-XXX.webp" alt="Captura del sitio de XXX"
+                             width="1200" height="760" loading="lazy" decoding="async">
+                    </span>
+                    <span class="proyecto-card-body">
+                        <span class="proyecto-card-meta">Landing page · 2026</span>
+                        <span class="proyecto-card-title">Nombre del cliente</span>
+                        <span class="proyecto-card-desc">Una o dos líneas sobre qué resolvía el sitio.</span>
+                        <span class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
+                        <span class="proyecto-card-cta">Ver sitio <span aria-hidden="true">↗</span></span>
+                    </span>
+                </a>
+            </article>
+
+            -->
+        </div>
+
+        <p class="proyectos-vacio" id="proyectos-vacio" hidden>
+            No hay proyectos de ese tipo todavía.
+        </p>
+
+        <section class="pagina-cta">
+            <h2>¿Querés uno así para tu negocio?</h2>
+            <p>Contame qué necesitás y te respondo con una propuesta concreta.</p>
+            <a href="index.html#contact" class="btn-arrow magnetic-link">
+                Hablemos <span aria-hidden="true">→</span>
+            </a>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

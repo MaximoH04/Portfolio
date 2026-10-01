@@ -92,6 +92,44 @@
         });
     };
 
+    /* ---------- Filtros de la página de proyectos ---------- */
+    const initFiltros = () => {
+        const grid = document.getElementById('proyectos-grid');
+        const botones = document.querySelectorAll('.filtro');
+        if (!grid || !botones.length) return;
+
+        const cards = Array.from(grid.querySelectorAll('.proyecto-card'));
+        const vacio = document.getElementById('proyectos-vacio');
+
+        // Los contadores salen del DOM, así que sumar un proyecto no obliga
+        // a tocar los números a mano.
+        document.querySelectorAll('[data-contador]').forEach((el) => {
+            const tipo = el.dataset.contador;
+            el.textContent = tipo === 'todos'
+                ? cards.length
+                : cards.filter((c) => c.dataset.tipo === tipo).length;
+        });
+
+        const aplicar = (tipo) => {
+            let visibles = 0;
+            cards.forEach((card) => {
+                const mostrar = tipo === 'todos' || card.dataset.tipo === tipo;
+                card.hidden = !mostrar;
+                if (mostrar) visibles++;
+            });
+
+            botones.forEach((b) => {
+                const activo = b.dataset.filtro === tipo;
+                b.classList.toggle('is-active', activo);
+                b.setAttribute('aria-pressed', String(activo));
+            });
+
+            if (vacio) vacio.hidden = visibles > 0;
+        };
+
+        botones.forEach((b) => b.addEventListener('click', () => aplicar(b.dataset.filtro)));
+    };
+
     /* ---------- Cursor custom + efecto magnético ---------- */
     const initCursor = () => {
         const cursorDot = document.querySelector('.cursor-dot');
@@ -166,6 +204,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         initTheme();
         initMobileNav();
+        initFiltros();
 
         // GSAP se carga por CDN: si falla, el sitio tiene que seguir siendo
         // legible en vez de romperse entero.
