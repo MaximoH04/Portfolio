@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Acceso por DNI — AFA | Máximo Hidalgo</title>
+    <meta name="description" content="Caso: sistema de control de acceso que registra el ingreso a las oficinas leyendo el código PDF417 del DNI. Relevamiento, análisis funcional y desarrollo en Python, de punta a punta.">
+    <link rel="canonical" href="https://portfolio-maximo-hidalgo.vercel.app/caso-control-acceso-dni.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Máximo Hidalgo">
+    <meta property="og:title" content="Control de Acceso por DNI — AFA">
+    <meta property="og:description" content="Sistema de control de acceso por lectura del PDF417 del DNI. Proyecto encarado de punta a punta: relevamiento, análisis funcional y desarrollo.">
+    <meta property="og:url" content="https://portfolio-maximo-hidalgo.vercel.app/caso-control-acceso-dni.html">
+    <meta property="og:image" content="https://portfolio-maximo-hidalgo.vercel.app/assets/images/proyecto-afa-dni.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0e0e0e">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/caso.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-circle" aria-hidden="true"></div>
+
+    <header class="top-header">
+        <a href="index.html" class="logo">MH&copy;26</a>
+        <nav class="desktop-nav" aria-label="Navegación principal">
+            <a href="index.html#work" class="magnetic-link">Proyectos</a>
+            <a href="index.html#experience" class="magnetic-link">Experiencia</a>
+            <a href="index.html#services" class="magnetic-link">Servicios</a>
+            <a href="index.html#about" class="magnetic-link">Sobre mí</a>
+            <a href="index.html#contact" class="magnetic-link">Contacto</a>
+        </nav>
+        <div class="theme-switch-wrapper magnetic-link">
+            <input type="checkbox" id="theme-switch">
+            <label for="theme-switch" class="switch-label">
+                <span class="visually-hidden">Cambiar entre modo claro y oscuro</span>
+            </label>
+        </div>
+    </header>
+
+    <main id="main" class="caso-main">
+        <article class="caso">
+            <a href="index.html#work" class="volver magnetic-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Volver a proyectos
+            </a>
+
+            <header class="caso-header">
+                <p class="caso-eyebrow">Sistema a medida · Abril – junio 2025</p>
+                <h1 class="caso-title">Control de Acceso<br>por DNI</h1>
+                <p class="caso-lead">
+                    Un sistema para registrar el ingreso de personas a las oficinas escaneando
+                    el DNI, con todos los datos centralizados en un solo lugar.
+                </p>
+
+                <dl class="caso-ficha">
+                    <div>
+                        <dt>Cliente</dt>
+                        <dd>AFA, a través de Nimat Solutions</dd>
+                    </div>
+                    <div>
+                        <dt>Período</dt>
+                        <dd>Abril – junio 2025</dd>
+                    </div>
+                    <div>
+                        <dt>Mi rol</dt>
+                        <dd>Relevamiento, análisis funcional y desarrollo</dd>
+                    </div>
+                    <div>
+                        <dt>Equipo</dt>
+                        <dd>Proyecto individual, de punta a punta</dd>
+                    </div>
+                </dl>
+            </header>
+
+            <figure class="caso-figura">
+                <!-- TODO: reemplazar por una captura real de la interfaz si conseguís una. -->
+                <img src="assets/images/proyecto-afa-dni.webp"
+                     alt="Ilustración de la interfaz: un documento con código de barras PDF417 siendo escaneado, junto a un panel con el registro de entradas y salidas"
+                     width="1200" height="760" loading="eager" decoding="async">
+                <figcaption>
+                    Ilustración de la interfaz. No se muestran capturas reales ni datos del
+                    cliente por confidencialidad.
+                </figcaption>
+            </figure>
+
+            <section class="caso-bloque">
+                <h2><span class="num">01</span> La necesidad</h2>
+                <p>
+                    El control de ingreso a las oficinas se llevaba de forma manual. Eso hacía
+                    lento el paso de cada persona por la recepción y dejaba los datos dispersos,
+                    sin una forma práctica de consultarlos después.
+                </p>
+                <p>
+                    El pedido fue concreto: <strong>agilizar el ingreso escaneando el DNI</strong>
+                    y <strong>centralizar los registros</strong> en un único sistema consultable.
+                </p>
+            </section>
+
+            <section class="caso-bloque">
+                <h2><span class="num">02</span> Mi rol</h2>
+                <p>
+                    Encaré el proyecto solo, de punta a punta. No recibí un pliego cerrado con
+                    los requerimientos: tuve que construirlos.
+                </p>
+                <ol class="caso-pasos">
+                    <li>
+                        <strong>Relevamiento.</strong> Reuniones presenciales en las oficinas
+                        del cliente para entender cómo era el circuito de ingreso tal como
+                        funcionaba, y qué necesitaba cada persona involucrada.
+                    </li>
+                    <li>
+                        <strong>Análisis funcional.</strong> Traducir lo conversado a
+                        funcionalidades concretas, definir el alcance y ordenar las prioridades.
+                    </li>
+                    <li>
+                        <strong>Propuesta.</strong> Presentar la solución al cliente y
+                        ajustarla con su devolución antes de escribir código.
+                    </li>
+                    <li>
+                        <strong>Desarrollo.</strong> Construcción completa del sistema en
+                        Python, incluida la lectura del código PDF417 del documento.
+                    </li>
+                </ol>
+            </section>
+
+            <section class="caso-bloque">
+                <h2><span class="num">03</span> Qué hace el sistema</h2>
+                <ul class="caso-lista">
+                    <li>Escaneo automático del código PDF417 del DNI, sin carga manual de datos.</li>
+                    <li>Registro de entradas y salidas con fecha y hora.</li>
+                    <li>Historial de visitas por persona.</li>
+                    <li>Visualización de la foto del DNI al momento del ingreso.</li>
+                    <li>Captura de foto para visitantes que ingresan por primera vez.</li>
+                    <li>Exportación de los registros a Excel.</li>
+                </ul>
+            </section>
+
+            <section class="caso-bloque">
+                <h2><span class="num">04</span> Stack</h2>
+                <div class="caso-stack">
+                    <span>Python</span>
+                    <span>PDF417</span>
+                    <span>Excel</span>
+                    <span>Análisis funcional</span>
+                </div>
+            </section>
+
+            <section class="caso-bloque">
+                <h2><span class="num">05</span> Resultado y aprendizajes</h2>
+                <p class="caso-destacado">
+                    El sistema quedó desarrollado y funcionando. El cliente decidió no
+                    implementarlo.
+                </p>
+                <p>
+                    Que no haya llegado a producción no le saca valor a lo que dejó. Fue la
+                    primera vez que encaré <strong>un proyecto institucional desde cero</strong>,
+                    sin nadie que me pasara los requerimientos ya masticados.
+                </p>
+                <p>
+                    Lo que más me sirvió fue el <strong>trato directo con el cliente</strong>:
+                    sentarme en sus oficinas, mirar cómo trabajaban y hacer las preguntas
+                    correctas. Ahí aprendí que la parte difícil no es escribir el código, sino
+                    <strong>convertir una necesidad contada en palabras en una solución
+                    concreta</strong>. Es la forma en la que sigo trabajando hoy.
+                </p>
+            </section>
+        </article>
+
+        <footer class="caso-footer caso">
+            <a href="index.html#work" class="magnetic-link">← Todos los proyectos</a>
+            <a href="caso-nimat-web.html" class="magnetic-link">Siguiente caso →</a>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

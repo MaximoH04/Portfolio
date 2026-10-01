@@ -1,0 +1,147 @@
+/* ===============================================================
+   Páginas de caso
+   Reemplaza a project-detail-1.css, que usaba variables que nunca
+   existieron en style.css (--text-primary, --border-radius) y por
+   eso se renderizaba sin color ni bordes.
+   =============================================================== */
+
+.caso-main { padding: 180px var(--padding-x) 0; }
+.caso { max-width: 1100px; margin: 0 auto; }
+
+/* ---------- Volver ---------- */
+.volver {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-dim); margin-bottom: 60px;
+    transition: color 0.3s ease;
+}
+.volver:hover { color: var(--text); }
+.volver svg { transition: transform 0.3s ease; }
+.volver:hover svg { transform: translateX(-5px); }
+
+/* ---------- Encabezado ---------- */
+.caso-header { border-bottom: 1px solid var(--border); padding-bottom: 50px; margin-bottom: 60px; }
+.caso-eyebrow {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--text-dim); margin-bottom: 20px;
+}
+.caso-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    line-height: 1; text-transform: uppercase; margin-bottom: 30px;
+}
+.caso-lead { font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; max-width: 65ch; color: var(--text-dim); }
+
+/* Ficha técnica */
+.caso-ficha {
+    list-style: none; display: grid; gap: 30px; margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+.caso-ficha dt {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-dim); margin-bottom: 8px;
+}
+.caso-ficha dd { font-size: 1rem; line-height: 1.5; }
+
+/* ---------- Imagen principal ---------- */
+.caso-figura { margin-bottom: 80px; }
+.caso-figura img { width: 100%; height: auto; border: 1px solid var(--border); }
+.caso-figura figcaption {
+    margin-top: 16px; font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;
+}
+
+/* ---------- Secciones ---------- */
+.caso-bloque { margin-bottom: 80px; }
+.caso-bloque h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    text-transform: uppercase; letter-spacing: 1px;
+    padding-bottom: 16px; margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: baseline; gap: 20px;
+}
+.caso-bloque h2 .num { font-size: 0.8rem; color: var(--text-dim); }
+.caso-bloque p { font-size: 1.05rem; line-height: 1.75; max-width: 70ch; color: var(--text-dim); }
+.caso-bloque p + p { margin-top: 1.2em; }
+.caso-bloque strong { color: var(--text); font-weight: 600; }
+
+/* Lista de funcionalidades */
+.caso-lista { list-style: none; display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.caso-lista li {
+    background: var(--bg); padding: 22px 26px;
+    display: flex; gap: 20px; align-items: baseline;
+    font-size: 1rem; line-height: 1.6;
+}
+.caso-lista li::before {
+    content: counter(item, decimal-leading-zero);
+    counter-increment: item;
+    font-family: var(--font-display); font-size: 0.75rem; color: var(--text-dim);
+    flex-shrink: 0;
+}
+.caso-lista { counter-reset: item; }
+
+/* Pasos del proceso */
+.caso-pasos { list-style: none; counter-reset: paso; display: grid; gap: 24px; }
+.caso-pasos li {
+    counter-increment: paso;
+    padding-left: 60px; position: relative;
+    font-size: 1.05rem; line-height: 1.7; color: var(--text-dim);
+}
+.caso-pasos li::before {
+    content: counter(paso, decimal-leading-zero);
+    position: absolute; left: 0; top: 2px;
+    font-family: var(--font-display); font-size: 0.8rem; color: var(--text);
+    border: 1px solid var(--border-strong); border-radius: 50%;
+    width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
+}
+
+/* Stack */
+.caso-stack { display: flex; flex-wrap: wrap; gap: 10px; }
+.caso-stack span {
+    font-size: 0.85rem; padding: 6px 16px;
+    border: 1px solid var(--border-strong); border-radius: 50px;
+}
+
+/* Resultado destacado */
+.caso-bloque .caso-destacado {
+    border-left: 2px solid var(--text);
+    padding: 6px 0 6px 30px;
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 55ch;
+}
+
+/* Enlace al sitio en vivo */
+.caso-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-top: 10px; padding-bottom: 6px;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
+    border-bottom: 1px solid var(--text);
+}
+.caso-entregado {
+    display: inline-block; padding: 10px 20px;
+    border: 1px dashed var(--border-strong);
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim);
+}
+
+/* ---------- Pie de caso ---------- */
+.caso-footer {
+    border-top: 1px solid var(--border);
+    padding: 60px 0 100px;
+    display: flex; justify-content: space-between; align-items: center; gap: 30px;
+    flex-wrap: wrap;
+}
+.caso-footer a {
+    font-family: var(--font-display); text-transform: uppercase;
+    font-size: clamp(0.9rem, 2vw, 1.3rem); letter-spacing: 1px;
+}
+.caso-footer a:hover { color: var(--text-dim); }
+
+@media (max-width: 768px) {
+    .caso-main { padding-top: 120px; }
+    .volver { margin-bottom: 40px; }
+    .caso-bloque { margin-bottom: 60px; }
+    .caso-pasos li { padding-left: 50px; }
+    .caso-pasos li::before { width: 32px; height: 32px; }
+}
