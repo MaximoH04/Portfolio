@@ -133,11 +133,16 @@
             const img = container.querySelector('img');
             if (!img) return;
 
-            gsap.to(img, {
-                y: '-20%',
-                ease: 'none',
-                scrollTrigger: { trigger: container, start: 'top bottom', end: 'bottom top', scrub: true }
-            });
+            // El margen de movimiento lo da el scale(1.12) del CSS: nos
+            // movemos dentro de ese 12% sin descubrir el fondo.
+            gsap.fromTo(img,
+                { yPercent: -5 },
+                {
+                    yPercent: 5,
+                    ease: 'none',
+                    scrollTrigger: { trigger: container, start: 'top bottom', end: 'bottom top', scrub: true }
+                }
+            );
         });
 
         // Marquee infinito
