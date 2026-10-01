@@ -33,18 +33,29 @@
 
     const initTheme = () => {
         const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-        const theme = savedTheme || (prefersLight ? 'light' : 'dark');
+        let theme = savedTheme || (prefersLight ? 'light' : 'dark');
         applyTheme(theme);
 
-        const toggle = document.getElementById('theme-switch');
+        const toggle = document.getElementById('theme-toggle');
         if (!toggle) return;
 
-        toggle.checked = theme === 'light';
-        toggle.addEventListener('change', () => {
-            const next = toggle.checked ? 'light' : 'dark';
-            applyTheme(next);
+        const label = toggle.querySelector('.visually-hidden');
+
+        // role="switch": aria-checked indica si el modo claro está puesto.
+        // El nombre accesible dice a qué modo lleva el botón.
+        const sync = () => {
+            const light = theme === 'light';
+            toggle.setAttribute('aria-checked', String(light));
+            if (label) label.textContent = light ? 'Modo claro' : 'Modo oscuro';
+        };
+        sync();
+
+        toggle.addEventListener('click', () => {
+            theme = theme === 'light' ? 'dark' : 'light';
+            applyTheme(theme);
+            sync();
             try {
-                localStorage.setItem(THEME_KEY, next);
+                localStorage.setItem(THEME_KEY, theme);
             } catch (e) { /* sin persistencia, pero el toggle funciona igual */ }
         });
     };
