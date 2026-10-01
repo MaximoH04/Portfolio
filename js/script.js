@@ -49,6 +49,38 @@
         });
     };
 
+    /* ---------- Menú móvil ---------- */
+    const initMobileNav = () => {
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('mobile-nav');
+        if (!toggle || !nav) return;
+
+        const label = toggle.querySelector('.visually-hidden');
+
+        const setOpen = (open) => {
+            nav.hidden = !open;
+            toggle.setAttribute('aria-expanded', String(open));
+            document.body.classList.toggle('nav-open', open);
+            if (label) label.textContent = open ? 'Cerrar menú' : 'Abrir menú';
+        };
+
+        toggle.addEventListener('click', () => {
+            setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+        });
+
+        // Al elegir una sección cerramos el panel, si no tapa el destino.
+        nav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setOpen(false));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !nav.hidden) {
+                setOpen(false);
+                toggle.focus();
+            }
+        });
+    };
+
     /* ---------- Cursor custom + efecto magnético ---------- */
     const initCursor = () => {
         const cursorDot = document.querySelector('.cursor-dot');
@@ -117,6 +149,7 @@
     /* ---------- Arranque ---------- */
     document.addEventListener('DOMContentLoaded', () => {
         initTheme();
+        initMobileNav();
 
         // GSAP se carga por CDN: si falla, el sitio tiene que seguir siendo
         // legible en vez de romperse entero.

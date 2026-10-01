@@ -101,7 +101,7 @@ body {
 
 .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; letter-spacing: 2px; }
 
-.desktop-nav { display: flex; gap: 40px; }
+.desktop-nav { display: flex; gap: 32px; }
 .desktop-nav a { 
     text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; font-weight: 600;
     position: relative;
@@ -110,6 +110,37 @@ body {
     content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 1px; background: currentColor; transition: 0.3s;
 }
 .desktop-nav a:hover::after { width: 100%; }
+
+/* Botón hamburguesa (sólo móvil) */
+.nav-toggle {
+    display: none;
+    background: none; border: 0; color: inherit;
+    width: 32px; height: 32px; padding: 0;
+    flex-direction: column; justify-content: center; gap: 7px;
+}
+.nav-toggle-bar {
+    display: block; width: 28px; height: 2px; background: currentColor;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:first-of-type { transform: translateY(4.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:last-of-type { transform: translateY(-4.5px) rotate(-45deg); }
+
+/* Panel de navegación móvil */
+.mobile-nav {
+    position: fixed; inset: 0; z-index: 99;
+    background: var(--bg);
+    display: flex; flex-direction: column; justify-content: center; gap: 8px;
+    padding: 0 var(--padding-x);
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    text-transform: uppercase;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+body.nav-open { overflow: hidden; }
 
 /* Hero Cinematic */
 .hero-cinematic {
@@ -197,13 +228,16 @@ body {
 .socials a { margin-right: 20px; color: var(--text); }
 
 /* Responsive adjustments */
-@media(max-width: 768px) {
+@media(max-width: 900px) {
     .giant-text { font-size: 15vw; }
     .project-row, .project-row.reverse { grid-template-columns: 1fr; gap: 40px; }
     .project-row.reverse .project-info { order: 0; }
-    .desktop-nav { display: none; } /* En móvil simplificaríamos */
-    .top-header { justify-content: center; }
-    .logo { position: absolute; left: 20px; }
+    .desktop-nav { display: none; }
+    .nav-toggle { display: flex; }
+    /* Logo a la izquierda, hamburguesa y tema a la derecha */
+    .top-header { padding: 20px var(--padding-x); gap: 20px; }
+    .nav-toggle { order: 2; margin-left: auto; }
+    .theme-switch-wrapper { order: 3; }
 }
 /* ---------------------------------------------------------------
    Movimiento reducido

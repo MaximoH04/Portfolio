@@ -44,13 +44,22 @@
     <div class="cursor-circle" aria-hidden="true"></div>
 
     <header class="top-header">
-        <div class="logo">MH&copy;26</div>
-        <nav class="desktop-nav">
-            <a href="#home" class="magnetic-link">Home</a>
-            <a href="#work" class="magnetic-link">Work</a>
-            <a href="#about" class="magnetic-link">About</a>
-            <a href="#contact" class="magnetic-link">Contact</a>
+        <a href="#home" class="logo">MH&copy;26</a>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+            <a href="#work" class="magnetic-link">Proyectos</a>
+            <a href="#experience" class="magnetic-link">Experiencia</a>
+            <a href="#services" class="magnetic-link">Servicios</a>
+            <a href="#about" class="magnetic-link">Sobre mí</a>
+            <a href="#contact" class="magnetic-link">Contacto</a>
         </nav>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="visually-hidden">Abrir menú</span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
         <div class="theme-switch-wrapper magnetic-link">
             <input type="checkbox" id="theme-switch">
             <label for="theme-switch" class="switch-label">
@@ -59,16 +68,29 @@
         </div>
     </header>
 
+    <!-- Menú móvil: el nav de escritorio desaparecía sin reemplazo -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+        <a href="#work">Proyectos</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#services">Servicios</a>
+        <a href="#education">Formación</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+
     <main id="main">
         <section id="home" class="hero-cinematic">
             <div class="container-fluid">
                 <h1 class="giant-text" id="hero-text">
-                    <div>CREATIVE</div>
-                    <div class="outline-text">DEVELOPER</div>
+                    <div>MÁXIMO</div>
+                    <div class="outline-text">HIDALGO</div>
                 </h1>
                 <div class="hero-sub">
-                    <p>Diseñando experiencias digitales inmersivas desde Argentina para el mundo.</p>
-                    <div class="scroll-indicator">
+                    <p>
+                        Desarrollador web en Buenos Aires. Hago sitios y sistemas a medida:
+                        relevo la necesidad con el cliente, propongo la solución y la desarrollo.
+                    </p>
+                    <div class="scroll-indicator" aria-hidden="true">
                         <span>Scroll</span>
                         <div class="line"></div>
                     </div>
@@ -80,7 +102,7 @@
             <div class="container">
                 <div class="section-title">
                     <span class="index">01</span>
-                    <h2>Selected Works</h2>
+                    <h2>Proyectos</h2>
                 </div>
 
                 <article class="project-row">
@@ -124,7 +146,7 @@
                 </p>
                 <div class="btn-center">
                     <a href="assets/cv.pdf" class="btn-circle magnetic-link">
-                        Download<br>CV
+                        Descargar<br>CV
                     </a>
                 </div>
             </div>
@@ -132,7 +154,7 @@
 
         <footer id="contact" class="footer-big">
             <div class="container">
-                <h2>Let's Talk</h2>
+                <h2>Hablemos</h2>
                 <a href="mailto:maxihidalgo04@gmail.com" class="giant-link magnetic-link">maxihidalgo04@gmail.com</a>
                 <div class="footer-meta">
                     <div class="socials">
