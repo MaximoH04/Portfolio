@@ -442,3 +442,44 @@ body.nav-open { overflow: hidden; }
 }
 .servicios-cta p { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 .servicios-cta .btn-arrow { margin-top: 0; }
+
+/* ---------- Sobre mí ---------- */
+.about-grid {
+    display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 70px;
+    align-items: start; text-align: left;
+}
+.about-foto img {
+    width: 100%; height: auto;
+    border: 1px solid var(--border);
+    filter: grayscale(1) contrast(1.05);
+    transition: filter 0.5s ease;
+}
+.about-foto:hover img { filter: grayscale(0) contrast(1); }
+
+.about-texto p { color: var(--text-dim); line-height: 1.8; font-size: 1.05rem; }
+.about-texto p + p { margin-top: 1.4em; }
+.about-texto .big-statement {
+    color: var(--text); margin: 0 0 1.4em; max-width: none; text-align: left;
+}
+.about-texto .btn-circle { margin-top: 50px; }
+
+/* ---------- Contacto ---------- */
+.footer-eyebrow {
+    font-family: var(--font-display); font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: var(--text-dim); margin-bottom: 24px;
+}
+.footer-big h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 4rem);
+    text-transform: uppercase; line-height: 1; margin-bottom: 30px;
+}
+.footer-intro {
+    color: var(--text-dim); font-size: 1.1rem; line-height: 1.7;
+    max-width: 52ch; margin-bottom: 60px;
+}
+.giant-link { font-size: clamp(1.25rem, 5vw, 4rem); word-break: break-word; }
+.socials { display: flex; flex-wrap: wrap; gap: 24px; }
+.socials a { margin-right: 0; }
+.socials a:hover { color: var(--text-dim); }
+.footer-meta { gap: 24px; flex-wrap: wrap; align-items: center; }
