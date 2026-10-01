@@ -3,7 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximo Hidalgo | Portfolio 2026</title>
+    <title>Máximo Hidalgo | Desarrollador web y sistemas a medida</title>
+    <meta name="description" content="Desarrollador web freelance en Buenos Aires. Hago sitios web, landing pages y sistemas a medida para negocios: relevo la necesidad, propongo la solución y la desarrollo.">
+    <meta name="author" content="Máximo Hidalgo">
+    <link rel="canonical" href="https://portfolio-maximo-hidalgo.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Máximo Hidalgo">
+    <meta property="og:title" content="Máximo Hidalgo | Desarrollador web y sistemas a medida">
+    <meta property="og:description" content="Desarrollador web freelance en Buenos Aires. Sitios web, landing pages y sistemas a medida para negocios.">
+    <meta property="og:url" content="https://portfolio-maximo-hidalgo.vercel.app/">
+    <meta property="og:image" content="https://portfolio-maximo-hidalgo.vercel.app/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Máximo Hidalgo — desarrollador web, Buenos Aires">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Máximo Hidalgo | Desarrollador web y sistemas a medida">
+    <meta name="twitter:description" content="Desarrollador web freelance en Buenos Aires. Sitios web, landing pages y sistemas a medida para negocios.">
+    <meta name="twitter:image" content="https://portfolio-maximo-hidalgo.vercel.app/assets/og-image.png">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0e0e0e">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,10 +36,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="noise-overlay"></div>
-    
-    <div class="cursor-dot"></div>
-    <div class="cursor-circle"></div>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-circle" aria-hidden="true"></div>
 
     <header class="top-header">
         <div class="logo">MH&copy;26</div>
@@ -26,11 +53,13 @@
         </nav>
         <div class="theme-switch-wrapper magnetic-link">
             <input type="checkbox" id="theme-switch">
-            <label for="theme-switch" class="switch-label"></label>
+            <label for="theme-switch" class="switch-label">
+                <span class="visually-hidden">Cambiar entre modo claro y oscuro</span>
+            </label>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section id="home" class="hero-cinematic">
             <div class="container-fluid">
                 <h1 class="giant-text" id="hero-text">

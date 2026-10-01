@@ -3,6 +3,9 @@
     --text: #ffffff;
     --text-dim: #888888;
     --accent: #d4d4d4; /* Plata suave en lugar de azul chillón */
+    --border: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.25);
+    --surface: rgba(255, 255, 255, 0.03);
     --font-display: 'Syncopate', sans-serif;
     --font-body: 'Manrope', sans-serif;
     --padding-x: 5vw;
@@ -11,11 +14,53 @@
 body.light-mode {
     --bg: #f0f0f0;
     --text: #1a1a1a;
-    --text-dim: #666;
+    /* #666 sobre #f0f0f0 queda en 4.9:1; #595959 sube a 5.7:1 y pasa AA holgado */
+    --text-dim: #595959;
     --accent: #333;
+    --border: rgba(0, 0, 0, 0.14);
+    --border-strong: rgba(0, 0, 0, 0.3);
+    --surface: rgba(0, 0, 0, 0.03);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; /* Ocultamos cursor nativo */ }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+html { scroll-behavior: smooth; }
+
+/* El cursor custom sólo tiene sentido con mouse: en touch y en punteros
+   gruesos dejamos el cursor nativo del sistema. */
+@media (hover: hover) and (pointer: fine) {
+    * { cursor: none; }
+}
+@media not all and (hover: hover) and (pointer: fine) {
+    .cursor-dot, .cursor-circle { display: none; }
+}
+
+/* Foco visible: imprescindible para navegación por teclado, y el diseño
+   lo tapaba por completo al ocultar el cursor. */
+:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Salto al contenido para lectores de pantalla y teclado */
+.skip-link {
+    position: absolute; top: 0; left: 50%; transform: translate(-50%, -150%);
+    z-index: 10001; padding: 12px 24px;
+    background: var(--text); color: var(--bg);
+    font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    transition: transform 0.2s ease;
+}
+.skip-link:focus { transform: translate(-50%, 0); }
+
+.visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
 
 body {
     background-color: var(--bg);
@@ -99,7 +144,7 @@ body {
 
 /* Projects Layout */
 .section-work { padding: 150px var(--padding-x); }
-.section-title { margin-bottom: 100px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end;}
+.section-title { margin-bottom: 100px; border-bottom: 1px solid var(--border); padding-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end;}
 .section-title h2 { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; }
 .section-title .index { font-family: var(--font-display); font-size: 1.5rem; color: var(--text-dim); }
 
@@ -113,7 +158,7 @@ body {
 
 .project-info h3 { font-size: 3rem; margin-bottom: 20px; line-height: 1; }
 .project-info p { color: var(--text-dim); margin-bottom: 30px; font-size: 1.1rem; }
-.tags span { margin-right: 15px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 50px; }
+.tags span { margin-right: 15px; font-size: 0.9rem; border: 1px solid var(--border-strong); padding: 5px 15px; border-radius: 50px; }
 
 .btn-arrow { display: inline-flex; align-items: center; gap: 10px; margin-top: 40px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--text); padding-bottom: 5px; }
 .btn-arrow i { transform: rotate(-45deg); transition: 0.3s; }
@@ -128,7 +173,7 @@ body {
 .section-marquee { padding: 100px 0; overflow: hidden; }
 .marquee-content {
     white-space: nowrap; font-family: var(--font-display); font-size: 6vw; 
-    color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.15);
+    color: transparent; -webkit-text-stroke: 1px var(--border-strong);
 }
 
 .about-brief { text-align: center; margin-top: 100px; padding: 0 var(--padding-x); }
@@ -137,14 +182,14 @@ body {
 
 .btn-circle {
     display: inline-flex; align-items: center; justify-content: center; text-align: center;
-    width: 150px; height: 150px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+    width: 150px; height: 150px; border-radius: 50%; border: 1px solid var(--border-strong);
     margin-top: 60px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
     transition: 0.3s;
 }
 .btn-circle:hover { background: var(--text); color: var(--bg); transform: scale(1.1); }
 
 /* Footer */
-.footer-big { padding: 100px var(--padding-x) 50px; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-big { padding: 100px var(--padding-x) 50px; border-top: 1px solid var(--border); }
 .giant-link { font-size: 5vw; font-weight: 700; display: block; margin-bottom: 50px; transition: 0.3s; }
 .giant-link:hover { color: var(--text-dim); }
 
@@ -159,4 +204,22 @@ body {
     .desktop-nav { display: none; } /* En móvil simplificaríamos */
     .top-header { justify-content: center; }
     .logo { position: absolute; left: 20px; }
+}
+/* ---------------------------------------------------------------
+   Movimiento reducido
+   Respeta prefers-reduced-motion: el JS también desactiva GSAP,
+   esto cubre las transiciones y animaciones puras de CSS.
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .cursor-dot, .cursor-circle { display: none; }
+    * { cursor: auto; }
 }
