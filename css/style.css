@@ -411,3 +411,34 @@ body.nav-open { overflow: hidden; }
     transition: border-color 0.3s ease, color 0.3s ease;
 }
 .skills-group li:hover { border-color: var(--text); }
+
+/* ---------- Servicios ---------- */
+.section-intro {
+    font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.6;
+    color: var(--text-dim); max-width: 60ch; margin-bottom: 70px;
+}
+
+.servicios {
+    list-style: none; display: grid; gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+.servicio {
+    background: var(--bg); padding: 45px 40px;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: background 0.35s ease;
+}
+.servicio:hover { background: var(--surface); }
+.servicio-num {
+    font-family: var(--font-display); font-size: 0.75rem;
+    color: var(--text-dim); letter-spacing: 1px; margin-bottom: 20px;
+}
+.servicio h3 { font-size: 1.35rem; line-height: 1.25; }
+.servicio p { color: var(--text-dim); line-height: 1.7; font-size: 1rem; }
+
+.servicios-cta {
+    margin-top: 70px; display: flex; align-items: center;
+    gap: 30px; flex-wrap: wrap;
+}
+.servicios-cta p { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+.servicios-cta .btn-arrow { margin-top: 0; }
