@@ -111,6 +111,31 @@ body {
 }
 .desktop-nav a:hover::after { width: 100%; }
 
+/* Switch de tema
+   No tenía ningún estilo: se veía como un checkbox nativo del sistema.
+   Usa currentColor para seguir funcionando bajo el mix-blend-mode del
+   header. */
+.theme-switch-wrapper { display: flex; align-items: center; }
+#theme-switch {
+    position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0;
+}
+.switch-label {
+    display: block; position: relative;
+    width: 42px; height: 22px; border-radius: 50px;
+    border: 1px solid currentColor;
+}
+.switch-label::after {
+    content: ''; position: absolute; top: 3px; left: 3px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: currentColor;
+    transition: transform 0.3s ease;
+}
+#theme-switch:checked + .switch-label::after { transform: translateX(18px); }
+/* El input está oculto, así que el foco se muestra sobre la etiqueta */
+#theme-switch:focus-visible + .switch-label {
+    outline: 2px solid currentColor; outline-offset: 4px;
+}
+
 /* Botón hamburguesa (sólo móvil) */
 .nav-toggle {
     display: none;
@@ -149,6 +174,10 @@ body.nav-open { overflow: hidden; }
     position: relative;
     padding: 0 var(--padding-x);
 }
+
+/* Como flex item, min-width:auto le impedía encoger por debajo del ancho
+   del texto gigante y el hero se iba 9px fuera de la pantalla en móvil. */
+.hero-cinematic > .container-fluid { min-width: 0; max-width: 100%; }
 
 .giant-text {
     font-family: var(--font-display);
@@ -289,6 +318,35 @@ body.nav-open { overflow: hidden; }
     .formacion-date { padding-top: 0; }
 
     .subsection-title { margin-top: 70px; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-foto { max-width: 320px; }
+    .about-texto .btn-circle { margin-top: 36px; }
+
+    .servicio { padding: 36px 28px; }
+    .section-intro { margin-bottom: 50px; }
+    .servicios-cta { margin-top: 50px; gap: 20px; }
+
+    .footer-big { padding: 70px var(--padding-x) 40px; }
+    .footer-intro { margin-bottom: 40px; }
+    .giant-link { margin-bottom: 40px; }
+    .footer-meta { flex-direction: column; align-items: flex-start; }
+}
+
+/* Teléfonos: el hero y el header necesitan más aire */
+@media (max-width: 560px) {
+    :root { --padding-x: 24px; }
+
+    .hero-cinematic { height: auto; min-height: 100svh; padding-top: 120px; padding-bottom: 150px; }
+    /* "HIDALGO" son 7 caracteres de Syncopate, que es muy ancha: por encima
+       de 11.5vw el hero no entra en pantallas de 320px. */
+    .giant-text { font-size: 11.5vw; }
+    .hero-sub { position: static; display: block; margin-top: 50px; }
+    .hero-sub p { max-width: none; }
+    .scroll-indicator { display: none; }
+
+    .skills-grid { gap: 40px; }
+    .timeline-desc, .section-intro, .about-texto p { font-size: 1rem; }
 }
 /* ---------------------------------------------------------------
    Movimiento reducido
