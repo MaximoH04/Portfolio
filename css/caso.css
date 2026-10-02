@@ -44,7 +44,7 @@
 .caso-ficha dd { font-size: 1rem; line-height: 1.5; }
 
 /* ---------- Imagen principal ---------- */
-.caso-figura { margin-bottom: 80px; }
+.caso-figura { margin-bottom: 80px; clip-path: inset(0%); }
 .caso-figura img { width: 100%; height: auto; border: 1px solid var(--border); }
 .caso-figura figcaption {
     margin-top: 16px; font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;
