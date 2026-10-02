@@ -464,7 +464,7 @@ body.nav-open { overflow: hidden; }
 
 /* ---------- Sobre mí ---------- */
 .about-grid {
-    display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 70px;
+    display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px;
     align-items: start; text-align: left;
 }
 .about-foto img {
@@ -686,3 +686,25 @@ body.nav-open { overflow: hidden; }
     .cursor-dot, .cursor-circle { display: none; }
     * { cursor: auto; }
 }
+
+/* ---------- Proyecto destacado ---------- */
+.project-info .badge-destacado {
+    display: inline-flex; align-items: center; gap: 9px; width: fit-content;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
+    padding: 7px 16px; border: 1px solid var(--border-strong); border-radius: 50px;
+    color: var(--text); margin-bottom: 22px;
+}
+.badge-punto {
+    width: 6px; height: 6px; border-radius: 50%; background: currentColor;
+    animation: latido 2.4s ease-in-out infinite;
+}
+@keyframes latido {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.35; transform: scale(0.8); }
+}
+
+.project-info .project-client {
+    font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+}
+.project-featured .project-info h3 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
