@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Toque! | Maximo Hidalgo</title>
-    <meta name="description" content="Caso: app mobile que conecta clientes con trabajadores verificados. Desarrollada con React Native y Expo, con verificación de identidad, chat integrado y modo SOS.">
+    <title data-i18n="caso.alt.meta.title">Al Toque! | Maximo Hidalgo</title>
+    <meta name="description" data-i18n-content="caso.alt.meta.desc" content="Caso: app mobile que conecta clientes con trabajadores verificados. Desarrollada con React Native y Expo, con verificación de identidad, chat integrado y modo SOS.">
+    <link rel="alternate" hreflang="es" href="https://portfolio-maximo-hidalgo.vercel.app/caso-al-toque.html">
+    <link rel="alternate" hreflang="en" href="https://portfolio-maximo-hidalgo.vercel.app/caso-al-toque.html?lang=en">
     <link rel="canonical" href="https://portfolio-maximo-hidalgo.vercel.app/caso-al-toque.html">
 
     <meta property="og:type" content="article">
@@ -26,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <a href="#main" class="skip-link" data-i18n="skip">Saltar al contenido</a>
 
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
@@ -34,15 +36,19 @@
 
     <header class="top-header">
         <a href="index.html" class="logo">Maximo Hidalgo</a>
-        <nav class="desktop-nav" aria-label="Navegación principal">
-            <a href="index.html#work">Proyectos</a>
-            <a href="index.html#experience">Experiencia</a>
-            <a href="index.html#services">Servicios</a>
-            <a href="index.html#about">Sobre mí</a>
-            <a href="index.html#contact">Contacto</a>
+        <nav class="desktop-nav" aria-label="Navegación principal" data-i18n-label="nav.aria">
+            <a href="index.html#work" data-i18n="nav.proyectos">Proyectos</a>
+            <a href="index.html#experience" data-i18n="nav.experiencia">Experiencia</a>
+            <a href="index.html#services" data-i18n="nav.servicios">Servicios</a>
+            <a href="index.html#about" data-i18n="nav.sobre">Sobre mí</a>
+            <a href="index.html#contact" data-i18n="nav.contacto">Contacto</a>
         </nav>
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma a inglés">
+            <span class="lang-opt" data-lang="es">ES</span>
+            <span class="lang-opt" data-lang="en">EN</span>
+        </button>
         <button type="button" class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false">
-            <span class="visually-hidden">Modo claro</span>
+            <span class="visually-hidden" data-i18n="tema.claro">Modo claro</span>
             <span class="theme-toggle-track" aria-hidden="true">
                 <span class="theme-toggle-knob"></span>
                 <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
@@ -64,59 +70,59 @@
                     <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2"
                           stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Volver a proyectos
+                <span data-i18n="caso.volver">Volver a proyectos</span>
             </a>
 
             <header class="caso-header">
                 <p class="caso-eyebrow">
-                    App mobile
-                    <span class="badge-estado">En pausa</span>
+                    <span data-i18n="caso.alt.eyebrow">App mobile</span>
+                    <span class="badge-estado" data-i18n="altoque.badge">En pausa</span>
                 </p>
                 <h1 class="caso-title">Al Toque!</h1>
-                <p class="caso-lead">
+                <p class="caso-lead" data-i18n="caso.alt.lead">
                     Una app que conecta clientes con trabajadores verificados, para que
                     encontrar a alguien de confianza no dependa de preguntar entre conocidos.
                 </p>
 
                 <dl class="caso-ficha">
                     <div>
-                        <dt>Tipo</dt>
-                        <dd>App mobile</dd>
+                        <dt data-i18n="ficha.tipo">Tipo</dt>
+                        <dd data-i18n="caso.alt.eyebrow">App mobile</dd>
                     </div>
                     <div>
-                        <dt>Mi rol</dt>
-                        <dd>Desarrollo de la app</dd>
+                        <dt data-i18n="ficha.rol">Mi rol</dt>
+                        <dd data-i18n="caso.alt.rol.dd">Desarrollo de la app</dd>
                     </div>
                     <div>
-                        <dt>Stack</dt>
-                        <dd>React Native y Expo</dd>
+                        <dt data-i18n="ficha.stack">Stack</dt>
+                        <dd data-i18n="caso.alt.stack.dd">React Native y Expo</dd>
                     </div>
                     <div>
-                        <dt>Estado</dt>
-                        <dd>En pausa</dd>
+                        <dt data-i18n="ficha.estado">Estado</dt>
+                        <dd data-i18n="caso.alt.estado.dd">En pausa</dd>
                     </div>
                 </dl>
             </header>
 
             <figure class="caso-figura">
                 <img src="assets/images/proyecto-altoque.webp"
-                     alt="Portada de Al Toque!, con el titular «Servicios al toque de un botón» y el mockup de la app en un teléfono"
+                     alt="Portada de Al Toque!, con el titular «Servicios al toque de un botón» y el mockup de la app en un teléfono" data-i18n-alt="altoque.img.alt"
                      width="1200" height="760" loading="eager" decoding="async">
-                <figcaption>La web del proyecto, en línea en altoqueapp.com.ar</figcaption>
+                <figcaption data-i18n="caso.alt.figcaption">La web del proyecto, en línea en altoqueapp.com.ar</figcaption>
             </figure>
 
             <section class="caso-bloque">
-                <h2><span class="num">01</span> Qué es</h2>
-                <p>
+                <h2 data-i18n="caso.alt.h1"><span class="num">01</span> Qué es</h2>
+                <p data-i18n="caso.alt.n1.p1">
                     Al Toque! conecta a quien necesita resolver algo con trabajadores
                     verificados de distintos rubros. La app cubre tres categorías:
                 </p>
                 <ul class="caso-lista">
-                    <li><strong>Servicios generales.</strong> Plomería, electricidad y climatización.</li>
-                    <li><strong>Servicios profesionales.</strong> Asesoramiento legal y contable.</li>
-                    <li><strong>Alquileres.</strong> Herramientas, equipos y artículos para eventos.</li>
+                    <li data-i18n="caso.alt.cat1"><strong>Servicios generales.</strong> Plomería, electricidad y climatización.</li>
+                    <li data-i18n="caso.alt.cat2"><strong>Servicios profesionales.</strong> Asesoramiento legal y contable.</li>
+                    <li data-i18n="caso.alt.cat3"><strong>Alquileres.</strong> Herramientas, equipos y artículos para eventos.</li>
                 </ul>
-                <p>
+                <p data-i18n="caso.alt.n1.p2">
                     La idea es que el cliente encuentre a la persona indicada sin depender de
                     recomendaciones sueltas, y que el trabajador consiga clientes cerca de su
                     zona sin pagar comisiones.
@@ -124,33 +130,33 @@
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">02</span> Mi rol</h2>
-                <p>
+                <h2 data-i18n="caso.alt.h2"><span class="num">02</span> Mi rol</h2>
+                <p data-i18n="caso.alt.n2.p1">
                     Desarrollé la app con <strong>React Native y Expo</strong>, lo que permite
                     mantener una sola base de código para Android y iOS.
                 </p>
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">03</span> Qué hace la app</h2>
+                <h2 data-i18n="caso.alt.h3"><span class="num">03</span> Qué hace la app</h2>
                 <ul class="caso-lista">
-                    <li>Verificación de identidad de los profesionales, con matrícula y antecedentes.</li>
-                    <li>Chat integrado entre cliente y trabajador.</li>
-                    <li>Modo SOS para urgencias, que hace visible al trabajador fuera de su horario.</li>
-                    <li>Sistema de calificaciones y reputación.</li>
-                    <li>Historial de trabajos realizados.</li>
+                    <li data-i18n="caso.alt.f1">Verificación de identidad de los profesionales, con matrícula y antecedentes.</li>
+                    <li data-i18n="caso.alt.f2">Chat integrado entre cliente y trabajador.</li>
+                    <li data-i18n="caso.alt.f3">Modo SOS para urgencias, que hace visible al trabajador fuera de su horario.</li>
+                    <li data-i18n="caso.alt.f4">Sistema de calificaciones y reputación.</li>
+                    <li data-i18n="caso.alt.f5">Historial de trabajos realizados.</li>
                 </ul>
 
                 <figure class="caso-figura caso-figura-secundaria">
                     <img src="assets/images/caso-altoque-funciones.webp"
-                         alt="Sección de la web que explica las funciones para clientes y para trabajadores"
+                         alt="Sección de la web que explica las funciones para clientes y para trabajadores" data-i18n-alt="caso.alt.fig2.alt"
                          width="1200" height="760" loading="lazy" decoding="async">
-                    <figcaption>La app está pensada para dos públicos: quien busca el servicio y quien lo ofrece.</figcaption>
+                    <figcaption data-i18n="caso.alt.fig2.cap">La app está pensada para dos públicos: quien busca el servicio y quien lo ofrece.</figcaption>
                 </figure>
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">04</span> Stack</h2>
+                <h2 data-i18n="caso.alt.h4"><span class="num">04</span> Stack</h2>
                 <div class="caso-stack">
                     <span>React Native</span>
                     <span>Expo</span>
@@ -159,18 +165,18 @@
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">05</span> Estado</h2>
-                <p class="caso-destacado">
+                <h2 data-i18n="caso.alt.h5"><span class="num">05</span> Estado</h2>
+                <p class="caso-destacado" data-i18n="caso.alt.destacado">
                     El proyecto está en pausa, pero podés ver cómo quedó desarrollado en su web.
                 </p>
-                <p>
+                <p data-i18n="caso.alt.n5.p1">
                     Fue mi primer desarrollo mobile y el primero pensado como producto, con dos
                     tipos de usuario que necesitan cosas distintas de la misma app.
                 </p>
                 <p>
                     <a href="https://altoqueapp.com.ar" class="caso-cta magnetic-link"
                        target="_blank" rel="noopener noreferrer">
-                        Ver la web
+                        <span data-i18n="caso.alt.verweb">Ver la web</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2"
                                   stroke-linecap="round" stroke-linejoin="round"/>
@@ -181,13 +187,14 @@
         </article>
 
         <footer class="caso-footer caso">
-            <a href="caso-control-acceso-dni.html" class="magnetic-link">← Caso anterior</a>
-            <a href="index.html#work" class="magnetic-link">Todos los proyectos →</a>
+            <a href="caso-control-acceso-dni.html" class="magnetic-link" data-i18n="caso.anterior">← Caso anterior</a>
+            <a href="index.html#work" class="magnetic-link" data-i18n="caso.todos">Todos los proyectos →</a>
         </footer>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

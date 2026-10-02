@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de Acceso por DNI para la AFA | Maximo Hidalgo</title>
-    <meta name="description" content="Caso: sistema de control de acceso desarrollado para la AFA (Asociación del Fútbol Argentino), que registra el ingreso a las oficinas leyendo el código PDF417 del DNI. Relevamiento, análisis funcional y desarrollo en Python, de punta a punta.">
+    <title data-i18n="caso.afa.meta.title">Control de Acceso por DNI para la AFA | Maximo Hidalgo</title>
+    <meta name="description" data-i18n-content="caso.afa.meta.desc" content="Caso: sistema de control de acceso desarrollado para la AFA (Asociación del Fútbol Argentino), que registra el ingreso a las oficinas leyendo el código PDF417 del DNI. Relevamiento, análisis funcional y desarrollo en Python, de punta a punta.">
+    <link rel="alternate" hreflang="es" href="https://portfolio-maximo-hidalgo.vercel.app/caso-control-acceso-dni.html">
+    <link rel="alternate" hreflang="en" href="https://portfolio-maximo-hidalgo.vercel.app/caso-control-acceso-dni.html?lang=en">
     <link rel="canonical" href="https://portfolio-maximo-hidalgo.vercel.app/caso-control-acceso-dni.html">
 
     <meta property="og:type" content="article">
@@ -26,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <a href="#main" class="skip-link" data-i18n="skip">Saltar al contenido</a>
 
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
@@ -34,15 +36,19 @@
 
     <header class="top-header">
         <a href="index.html" class="logo">Maximo Hidalgo</a>
-        <nav class="desktop-nav" aria-label="Navegación principal">
-            <a href="index.html#work">Proyectos</a>
-            <a href="index.html#experience">Experiencia</a>
-            <a href="index.html#services">Servicios</a>
-            <a href="index.html#about">Sobre mí</a>
-            <a href="index.html#contact">Contacto</a>
+        <nav class="desktop-nav" aria-label="Navegación principal" data-i18n-label="nav.aria">
+            <a href="index.html#work" data-i18n="nav.proyectos">Proyectos</a>
+            <a href="index.html#experience" data-i18n="nav.experiencia">Experiencia</a>
+            <a href="index.html#services" data-i18n="nav.servicios">Servicios</a>
+            <a href="index.html#about" data-i18n="nav.sobre">Sobre mí</a>
+            <a href="index.html#contact" data-i18n="nav.contacto">Contacto</a>
         </nav>
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma a inglés">
+            <span class="lang-opt" data-lang="es">ES</span>
+            <span class="lang-opt" data-lang="en">EN</span>
+        </button>
         <button type="button" class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false">
-            <span class="visually-hidden">Modo claro</span>
+            <span class="visually-hidden" data-i18n="tema.claro">Modo claro</span>
             <span class="theme-toggle-track" aria-hidden="true">
                 <span class="theme-toggle-knob"></span>
                 <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
@@ -64,21 +70,21 @@
                     <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2"
                           stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Volver a proyectos
+                <span data-i18n="caso.volver">Volver a proyectos</span>
             </a>
 
             <header class="caso-header">
                 <div class="caso-cliente">
                     <img src="assets/images/afa-escudo.webp"
-                         alt="Escudo de la Asociación del Fútbol Argentino"
+                         alt="Escudo de la Asociación del Fútbol Argentino" data-i18n-alt="caso.afa.escudo.alt"
                          width="90" height="114" loading="eager">
                     <p class="caso-eyebrow">
                         Asociación del Fútbol Argentino (AFA)<br>
-                        <span>Abril a junio de 2025</span>
+                        <span data-i18n="caso.afa.fecha">Abril a junio de 2025</span>
                     </p>
                 </div>
-                <h1 class="caso-title">Control de Acceso<br>por DNI</h1>
-                <p class="caso-lead">
+                <h1 class="caso-title" data-i18n="caso.afa.titulo">Control de Acceso<br>por DNI</h1>
+                <p class="caso-lead" data-i18n="caso.afa.lead">
                     Un sistema para registrar el ingreso de personas a las oficinas de la
                     <strong>Asociación del Fútbol Argentino</strong> escaneando el DNI, con
                     todos los datos centralizados en un solo lugar.
@@ -86,20 +92,20 @@
 
                 <dl class="caso-ficha">
                     <div>
-                        <dt>Cliente</dt>
-                        <dd>Asociación del Fútbol Argentino (AFA)<br><span class="caso-ficha-nota">A través de Nimat Solutions</span></dd>
+                        <dt data-i18n="ficha.cliente">Cliente</dt>
+                        <dd data-i18n="caso.afa.cliente">Asociación del Fútbol Argentino (AFA)<br><span class="caso-ficha-nota">A través de Nimat Solutions</span></dd>
                     </div>
                     <div>
-                        <dt>Período</dt>
-                        <dd>Abril a junio de 2025</dd>
+                        <dt data-i18n="ficha.periodo">Período</dt>
+                        <dd data-i18n="caso.afa.fecha">Abril a junio de 2025</dd>
                     </div>
                     <div>
-                        <dt>Mi rol</dt>
-                        <dd>Relevamiento, análisis funcional y desarrollo</dd>
+                        <dt data-i18n="ficha.rol">Mi rol</dt>
+                        <dd data-i18n="caso.afa.rol.dd">Relevamiento, análisis funcional y desarrollo</dd>
                     </div>
                     <div>
-                        <dt>Equipo</dt>
-                        <dd>Proyecto individual, de punta a punta</dd>
+                        <dt data-i18n="ficha.equipo">Equipo</dt>
+                        <dd data-i18n="caso.afa.equipo.dd">Proyecto individual, de punta a punta</dd>
                     </div>
                 </dl>
             </header>
@@ -107,48 +113,48 @@
             <figure class="caso-figura">
                 <!-- TODO: reemplazar por una captura real de la interfaz si conseguís una. -->
                 <img src="assets/images/proyecto-afa-dni.webp"
-                     alt="Ilustración de la interfaz: un documento con código de barras PDF417 siendo escaneado, junto a un panel con el registro de entradas y salidas"
+                     alt="Ilustración de la interfaz: un documento con código de barras PDF417 siendo escaneado, junto a un panel con el registro de entradas y salidas" data-i18n-alt="afa.img.alt"
                      width="1200" height="760" loading="eager" decoding="async">
-                <figcaption>
+                <figcaption data-i18n="caso.afa.figcaption">
                     Ilustración de la interfaz. No se muestran capturas reales ni datos del
                     cliente por confidencialidad.
                 </figcaption>
             </figure>
 
             <section class="caso-bloque">
-                <h2><span class="num">01</span> La necesidad</h2>
-                <p>
+                <h2 data-i18n="caso.afa.h1"><span class="num">01</span> La necesidad</h2>
+                <p data-i18n="caso.afa.n1.p1">
                     El control de ingreso a las oficinas de la AFA se llevaba de forma manual. Eso hacía
                     lento el paso de cada persona por la recepción y dejaba los datos dispersos,
                     sin una forma práctica de consultarlos después.
                 </p>
-                <p>
+                <p data-i18n="caso.afa.n1.p2">
                     El pedido fue concreto: <strong>agilizar el ingreso escaneando el DNI</strong>
                     y <strong>centralizar los registros</strong> en un único sistema consultable.
                 </p>
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">02</span> Mi rol</h2>
-                <p>
+                <h2 data-i18n="caso.afa.h2"><span class="num">02</span> Mi rol</h2>
+                <p data-i18n="caso.afa.n2.p1">
                     Encaré el proyecto solo, de punta a punta. No recibí un pliego cerrado con
                     los requerimientos: tuve que construirlos.
                 </p>
                 <ol class="caso-pasos">
-                    <li>
+                    <li data-i18n="caso.afa.paso1">
                         <strong>Relevamiento.</strong> Reuniones presenciales en las oficinas
                         de la AFA para entender cómo era el circuito de ingreso tal como
                         funcionaba, y qué necesitaba cada persona involucrada.
                     </li>
-                    <li>
+                    <li data-i18n="caso.afa.paso2">
                         <strong>Análisis funcional.</strong> Traducir lo conversado a
                         funcionalidades concretas, definir el alcance y ordenar las prioridades.
                     </li>
-                    <li>
+                    <li data-i18n="caso.afa.paso3">
                         <strong>Propuesta.</strong> Presentar la solución al cliente y
                         ajustarla con su devolución antes de escribir código.
                     </li>
-                    <li>
+                    <li data-i18n="caso.afa.paso4">
                         <strong>Desarrollo.</strong> Construcción completa del sistema en
                         Python, incluida la lectura del código PDF417 del documento.
                     </li>
@@ -157,53 +163,53 @@
                 <div class="caso-fotos">
                     <figure>
                         <img src="assets/images/afa-oficinas.webp"
-                             alt="Recepción de las oficinas de la AFA, donde se hicieron las reuniones de relevamiento"
+                             alt="Recepción de las oficinas de la AFA, donde se hicieron las reuniones de relevamiento" data-i18n-alt="caso.afa.foto1.alt"
                              width="800" height="1000" loading="lazy" decoding="async">
-                        <figcaption>Las oficinas donde relevé el circuito de ingreso.</figcaption>
+                        <figcaption data-i18n="caso.afa.foto1.cap">Las oficinas donde relevé el circuito de ingreso.</figcaption>
                     </figure>
                     <figure>
                         <img src="assets/images/afa-desarrollo.webp"
-                             alt="Maximo Hidalgo trabajando en el desarrollo del sistema, con el código en pantalla"
+                             alt="Maximo Hidalgo trabajando en el desarrollo del sistema, con el código en pantalla" data-i18n-alt="caso.afa.foto2.alt"
                              width="800" height="1000" loading="lazy" decoding="async">
-                        <figcaption>Durante el desarrollo del sistema.</figcaption>
+                        <figcaption data-i18n="caso.afa.foto2.cap">Durante el desarrollo del sistema.</figcaption>
                     </figure>
                 </div>
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">03</span> Qué hace el sistema</h2>
+                <h2 data-i18n="caso.afa.h3"><span class="num">03</span> Qué hace el sistema</h2>
                 <ul class="caso-lista">
-                    <li>Escaneo automático del código PDF417 del DNI, sin carga manual de datos.</li>
-                    <li>Registro de entradas y salidas con fecha y hora.</li>
-                    <li>Historial de visitas por persona.</li>
-                    <li>Visualización de la foto del DNI al momento del ingreso.</li>
-                    <li>Captura de foto para visitantes que ingresan por primera vez.</li>
-                    <li>Exportación de los registros a Excel.</li>
+                    <li data-i18n="caso.afa.f1">Escaneo automático del código PDF417 del DNI, sin carga manual de datos.</li>
+                    <li data-i18n="caso.afa.f2">Registro de entradas y salidas con fecha y hora.</li>
+                    <li data-i18n="caso.afa.f3">Historial de visitas por persona.</li>
+                    <li data-i18n="caso.afa.f4">Visualización de la foto del DNI al momento del ingreso.</li>
+                    <li data-i18n="caso.afa.f5">Captura de foto para visitantes que ingresan por primera vez.</li>
+                    <li data-i18n="caso.afa.f6">Exportación de los registros a Excel.</li>
                 </ul>
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">04</span> Stack</h2>
+                <h2 data-i18n="caso.afa.h4"><span class="num">04</span> Stack</h2>
                 <div class="caso-stack">
                     <span>Python</span>
                     <span>PDF417</span>
                     <span>Excel</span>
-                    <span>Análisis funcional</span>
+                    <span data-i18n="caso.afa.tag.analisis">Análisis funcional</span>
                 </div>
             </section>
 
             <section class="caso-bloque">
-                <h2><span class="num">05</span> Resultado y aprendizajes</h2>
-                <p class="caso-destacado">
+                <h2 data-i18n="caso.afa.h5"><span class="num">05</span> Resultado y aprendizajes</h2>
+                <p class="caso-destacado" data-i18n="caso.afa.destacado">
                     El sistema quedó desarrollado y funcionando. El cliente decidió no
                     implementarlo.
                 </p>
-                <p>
+                <p data-i18n="caso.afa.n5.p1">
                     Que no haya llegado a producción no le saca valor a lo que dejó. Fue la
                     primera vez que encaré <strong>un proyecto institucional desde cero</strong>,
                     sin nadie que me pasara los requerimientos ya masticados.
                 </p>
-                <p>
+                <p data-i18n="caso.afa.n5.p2">
                     Lo que más me sirvió fue el <strong>trato directo con el cliente</strong>:
                     sentarme en sus oficinas, mirar cómo trabajaban y hacer las preguntas
                     correctas. Ahí aprendí que la parte difícil no es escribir el código, sino
@@ -214,13 +220,14 @@
         </article>
 
         <footer class="caso-footer caso">
-            <a href="index.html#work" class="magnetic-link">← Todos los proyectos</a>
-            <a href="caso-al-toque.html" class="magnetic-link">Siguiente caso →</a>
+            <a href="index.html#work" class="magnetic-link"><span data-i18n="caso.anterior">← Todos los proyectos</span></a>
+            <a href="caso-al-toque.html" class="magnetic-link" data-i18n="caso.siguiente">Siguiente caso →</a>
         </footer>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

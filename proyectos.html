@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos | Maximo Hidalgo</title>
-    <meta name="description" content="Todos los proyectos de Maximo Hidalgo: sitios web para clientes, apps y sistemas a medida para negocios. Buenos Aires, Argentina.">
+    <title data-i18n="proy.meta.title">Proyectos | Maximo Hidalgo</title>
+    <meta name="description" data-i18n-content="proy.meta.desc" content="Todos los proyectos de Maximo Hidalgo: sitios web para clientes, apps y sistemas a medida para negocios. Buenos Aires, Argentina.">
+    <link rel="alternate" hreflang="es" href="https://portfolio-maximo-hidalgo.vercel.app/proyectos.html">
+    <link rel="alternate" hreflang="en" href="https://portfolio-maximo-hidalgo.vercel.app/proyectos.html?lang=en">
     <link rel="canonical" href="https://portfolio-maximo-hidalgo.vercel.app/proyectos.html">
 
     <meta property="og:type" content="website">
@@ -25,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <a href="#main" class="skip-link" data-i18n="skip">Saltar al contenido</a>
 
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
@@ -34,22 +36,26 @@
     <header class="top-header">
         <a href="index.html" class="logo">Maximo Hidalgo</a>
 
-        <nav class="desktop-nav" aria-label="Navegación principal">
-            <a href="proyectos.html" aria-current="page">Proyectos</a>
-            <a href="index.html#experience">Experiencia</a>
-            <a href="index.html#services">Servicios</a>
-            <a href="index.html#about">Sobre mí</a>
-            <a href="index.html#contact">Contacto</a>
+        <nav class="desktop-nav" aria-label="Navegación principal" data-i18n-label="nav.aria">
+            <a href="proyectos.html" aria-current="page" data-i18n="nav.proyectos">Proyectos</a>
+            <a href="index.html#experience" data-i18n="nav.experiencia">Experiencia</a>
+            <a href="index.html#services" data-i18n="nav.servicios">Servicios</a>
+            <a href="index.html#about" data-i18n="nav.sobre">Sobre mí</a>
+            <a href="index.html#contact" data-i18n="nav.contacto">Contacto</a>
         </nav>
 
         <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
-            <span class="visually-hidden">Abrir menú</span>
+            <span class="visually-hidden" data-i18n="nav.abrir">Abrir menú</span>
             <span class="nav-toggle-bar" aria-hidden="true"></span>
             <span class="nav-toggle-bar" aria-hidden="true"></span>
         </button>
 
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma a inglés">
+            <span class="lang-opt" data-lang="es">ES</span>
+            <span class="lang-opt" data-lang="en">EN</span>
+        </button>
         <button type="button" class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false">
-            <span class="visually-hidden">Modo claro</span>
+            <span class="visually-hidden" data-i18n="tema.claro">Modo claro</span>
             <span class="theme-toggle-track" aria-hidden="true">
                 <span class="theme-toggle-knob"></span>
                 <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
@@ -64,20 +70,20 @@
         <span class="scroll-progress" aria-hidden="true"></span>
     </header>
 
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="index.html#experience">Experiencia</a>
-        <a href="index.html#services">Servicios</a>
-        <a href="index.html#education">Formación</a>
-        <a href="index.html#about">Sobre mí</a>
-        <a href="index.html#contact">Contacto</a>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" data-i18n-label="nav.aria.movil" hidden>
+        <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
+        <a href="index.html#experience" data-i18n="nav.experiencia">Experiencia</a>
+        <a href="index.html#services" data-i18n="nav.servicios">Servicios</a>
+        <a href="index.html#education" data-i18n="nav.formacion">Formación</a>
+        <a href="index.html#about" data-i18n="nav.sobre">Sobre mí</a>
+        <a href="index.html#contact" data-i18n="nav.contacto">Contacto</a>
     </nav>
 
     <main id="main" class="pagina">
         <header class="pagina-header">
-            <p class="pagina-eyebrow">Trabajo</p>
-            <h1 class="pagina-title">Proyectos</h1>
-            <p class="pagina-lead">
+            <p class="pagina-eyebrow" data-i18n="proy.eyebrow">Trabajo</p>
+            <h1 class="pagina-title" data-i18n="proy.titulo">Proyectos</h1>
+            <p class="pagina-lead" data-i18n="proy.lead">
                 Sitios web para clientes, apps y sistemas a medida para negocios. En los
                 que tienen página de caso vas a encontrar cómo se trabajó, no sólo el
                 resultado.
@@ -86,18 +92,18 @@
 
         <!-- Filtros. Si en algún momento queda un solo tipo de proyecto,
              conviene sacar la barra entera. -->
-        <div class="filtros" role="group" aria-label="Filtrar proyectos por tipo">
+        <div class="filtros" role="group" aria-label="Filtrar proyectos por tipo" data-i18n-label="proy.filtros.aria">
             <button type="button" class="filtro is-active" data-filtro="todos" aria-pressed="true">
-                Todos <span class="filtro-n" data-contador="todos"></span>
+                <span data-i18n="proy.filtro.todos">Todos</span> <span class="filtro-n" data-contador="todos"></span>
             </button>
             <button type="button" class="filtro" data-filtro="web" aria-pressed="false">
-                Sitios web <span class="filtro-n" data-contador="web"></span>
+                <span data-i18n="proy.filtro.web">Sitios web</span> <span class="filtro-n" data-contador="web"></span>
             </button>
             <button type="button" class="filtro" data-filtro="mobile" aria-pressed="false">
-                Apps <span class="filtro-n" data-contador="mobile"></span>
+                <span data-i18n="proy.filtro.apps">Apps</span> <span class="filtro-n" data-contador="mobile"></span>
             </button>
             <button type="button" class="filtro" data-filtro="sistema" aria-pressed="false">
-                Sistemas a medida <span class="filtro-n" data-contador="sistema"></span>
+                <span data-i18n="proy.filtro.sistemas">Sistemas a medida</span> <span class="filtro-n" data-contador="sistema"></span>
             </button>
         </div>
 
@@ -126,16 +132,16 @@
                              width="1200" height="760" loading="lazy" decoding="async">
                     </span>
                     <span class="proyecto-card-body">
-                        <span class="proyecto-card-meta">Sistema a medida · 2025</span>
-                        <span class="proyecto-card-title">Control de Acceso por DNI</span>
-                        <span class="proyecto-card-desc">
+                        <span class="proyecto-card-meta" data-i18n="card.afa.meta">Sistema a medida · 2025</span>
+                        <span class="proyecto-card-title" data-i18n="card.afa.tit">Control de Acceso por DNI</span>
+                        <span class="proyecto-card-desc" data-i18n="card.afa.desc">
                             Registro de ingreso a oficinas leyendo el código PDF417 del DNI,
                             con historial por visitante y exportación a Excel.
                         </span>
                         <span class="tags">
                             <span>Python</span><span>PDF417</span><span>Excel</span>
                         </span>
-                        <span class="proyecto-card-cta">Ver caso <span aria-hidden="true">→</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="btn.vercaso">Ver caso</span> <span aria-hidden="true">→</span></span>
                     </span>
                 </a>
             </article>
@@ -144,13 +150,13 @@
                 <a href="https://www.proyectoecoeco.com" class="proyecto-card-link" target="_blank" rel="noopener noreferrer">
                     <span class="proyecto-card-img">
                         <img src="assets/images/proyecto-ecoeco.webp"
-                             alt="Portada de Proyecto ECO ECO, con un video de fondo de un ñandú en un paisaje con torres de petróleo"
+                             alt="Portada de Proyecto ECO ECO, con un video de fondo de un ñandú en un paisaje con torres de petróleo" data-i18n-alt="card.eco.alt"
                              width="1200" height="760" loading="lazy" decoding="async">
                     </span>
                     <span class="proyecto-card-body">
-                        <span class="proyecto-card-meta">Sitio cultural</span>
+                        <span class="proyecto-card-meta" data-i18n="card.eco.meta">Sitio cultural</span>
                         <span class="proyecto-card-title">Proyecto ECO ECO</span>
-                        <span class="proyecto-card-desc">
+                        <span class="proyecto-card-desc" data-i18n="card.eco.desc">
                             Sitio bilingüe para un proyecto artístico sobre el impacto de los
                             hidrocarburos en los territorios. Video de fondo, convocatorias y
                             carrusel de producciones.
@@ -158,7 +164,7 @@
                         <span class="tags">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bilingüe</span>
                         </span>
-                        <span class="proyecto-card-cta">Ver sitio <span aria-hidden="true">↗</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="card.versitio">Ver sitio</span> <span aria-hidden="true">↗</span></span>
                     </span>
                 </a>
             </article>
@@ -166,15 +172,15 @@
             <article class="proyecto-card" data-tipo="web">
                 <a href="https://agustina-hidalgo-portfolio.vercel.app/" class="proyecto-card-link" target="_blank" rel="noopener noreferrer">
                     <span class="proyecto-card-img">
-                        <img src="assets/images/proyecto-agustina.webp" alt="Portada del portfolio de Agustina Hidalgo, traductora e intérprete médica"
+                        <img src="assets/images/proyecto-agustina.webp" alt="Portada del portfolio de Agustina Hidalgo, traductora e intérprete médica" data-i18n-alt="card.agus.alt"
                              width="1200" height="760" loading="lazy" decoding="async">
                     </span>
                     <span class="proyecto-card-body">
-                        <span class="proyecto-card-meta">Portfolio profesional</span>
+                        <span class="proyecto-card-meta" data-i18n="card.agus.meta">Portfolio profesional</span>
                         <span class="proyecto-card-title">Agustina Hidalgo</span>
-                        <span class="proyecto-card-desc">Portfolio bilingüe para una traductora pública e intérprete médica, con selector de idioma, modo oscuro y secciones de servicios y trayectoria.</span>
+                        <span class="proyecto-card-desc" data-i18n="card.agus.desc">Portfolio bilingüe para una traductora pública e intérprete médica, con selector de idioma, modo oscuro y secciones de servicios y trayectoria.</span>
                         <span class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bilingüe</span></span>
-                        <span class="proyecto-card-cta">Ver sitio <span aria-hidden="true">↗</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="card.versitio">Ver sitio</span> <span aria-hidden="true">↗</span></span>
                     </span>
                 </a>
             </article>
@@ -182,15 +188,15 @@
             <article class="proyecto-card" data-tipo="web">
                 <a href="https://tomixvisuals.com.ar" class="proyecto-card-link" target="_blank" rel="noopener noreferrer">
                     <span class="proyecto-card-img">
-                        <img src="assets/images/proyecto-tomix.webp" alt="Portada de Tomix Visuals, con el titular «Soluciones web rápidas para tu negocio»"
+                        <img src="assets/images/proyecto-tomix.webp" alt="Portada de Tomix Visuals, con el titular «Soluciones web rápidas para tu negocio»" data-i18n-alt="card.tomix.alt"
                              width="1200" height="760" loading="lazy" decoding="async">
                     </span>
                     <span class="proyecto-card-body">
-                        <span class="proyecto-card-meta">Sitio de estudio</span>
+                        <span class="proyecto-card-meta" data-i18n="card.tomix.meta">Sitio de estudio</span>
                         <span class="proyecto-card-title">Tomix Visuals</span>
-                        <span class="proyecto-card-desc">Sitio de un estudio de desarrollo web: presentación de servicios, sección de proyectos y agenda de consultas.</span>
+                        <span class="proyecto-card-desc" data-i18n="card.tomix.desc">Sitio de un estudio de desarrollo web: presentación de servicios, sección de proyectos y agenda de consultas.</span>
                         <span class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
-                        <span class="proyecto-card-cta">Ver sitio <span aria-hidden="true">↗</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="card.versitio">Ver sitio</span> <span aria-hidden="true">↗</span></span>
                     </span>
                 </a>
             </article>
@@ -199,21 +205,21 @@
                 <a href="caso-al-toque.html" class="proyecto-card-link">
                     <span class="proyecto-card-img">
                         <img src="assets/images/proyecto-altoque.webp"
-                             alt="Portada de Al Toque!, con el mockup de la app en un teléfono"
+                             alt="Portada de Al Toque!, con el mockup de la app en un teléfono" data-i18n-alt="card.altoque.alt"
                              width="1200" height="760" loading="lazy" decoding="async">
                     </span>
                     <span class="proyecto-card-body">
                         <span class="proyecto-card-meta">
-                            App mobile
-                            <span class="badge-estado">En pausa</span>
+                            <span data-i18n="altoque.meta">App mobile</span>
+                            <span class="badge-estado" data-i18n="altoque.badge">En pausa</span>
                         </span>
                         <span class="proyecto-card-title">Al Toque!</span>
-                        <span class="proyecto-card-desc">
+                        <span class="proyecto-card-desc" data-i18n="card.altoque.desc">
                             App que conecta clientes con trabajadores verificados: servicios
                             generales, profesionales y alquiler de equipos.
                         </span>
                         <span class="tags"><span>React Native</span><span>Expo</span><span>Mobile</span></span>
-                        <span class="proyecto-card-cta">Ver caso <span aria-hidden="true">→</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="btn.vercaso">Ver caso</span> <span aria-hidden="true">→</span></span>
                     </span>
                 </a>
             </article>
@@ -221,15 +227,15 @@
             <article class="proyecto-card" data-tipo="web">
                 <a href="https://vpgroup.netlify.app/" class="proyecto-card-link" target="_blank" rel="noopener noreferrer">
                     <span class="proyecto-card-img">
-                        <img src="assets/images/proyecto-vpgroup.webp" alt="Portada de VP Group, con el titular «Transformando eventos en experiencias inolvidables»"
+                        <img src="assets/images/proyecto-vpgroup.webp" alt="Portada de VP Group, con el titular «Transformando eventos en experiencias inolvidables»" data-i18n-alt="card.vp.alt"
                              width="1200" height="760" loading="lazy" decoding="async">
                     </span>
                     <span class="proyecto-card-body">
-                        <span class="proyecto-card-meta">Sitio institucional</span>
+                        <span class="proyecto-card-meta" data-i18n="card.vp.meta">Sitio institucional</span>
                         <span class="proyecto-card-title">VP Group</span>
-                        <span class="proyecto-card-desc">Sitio para una productora de eventos corporativos, regalos empresariales y management de artistas.</span>
+                        <span class="proyecto-card-desc" data-i18n="card.vp.desc">Sitio para una productora de eventos corporativos, regalos empresariales y management de artistas.</span>
                         <span class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
-                        <span class="proyecto-card-cta">Ver sitio <span aria-hidden="true">↗</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="card.versitio">Ver sitio</span> <span aria-hidden="true">↗</span></span>
                     </span>
                 </a>
             </article>
@@ -237,15 +243,15 @@
             <article class="proyecto-card" data-tipo="web">
                 <a href="https://test-task-maximo-hidalgo.vercel.app/" class="proyecto-card-link" target="_blank" rel="noopener noreferrer">
                     <span class="proyecto-card-img">
-                        <img src="assets/images/proyecto-testtask.webp" alt="Portada de Better Weigh, clínica de control médico y descenso de peso en Chicago"
+                        <img src="assets/images/proyecto-testtask.webp" alt="Portada de Better Weigh, clínica de control médico y descenso de peso en Chicago" data-i18n-alt="card.bw.alt"
                              width="1200" height="760" loading="lazy" decoding="async">
                     </span>
                     <span class="proyecto-card-body">
-                        <span class="proyecto-card-meta">Landing page</span>
+                        <span class="proyecto-card-meta" data-i18n="card.bw.meta">Landing page</span>
                         <span class="proyecto-card-title">Better Weigh</span>
-                        <span class="proyecto-card-desc">Landing en inglés para una clínica de Chicago, con cuenta regresiva de la promoción y un único objetivo: reservar el turno.</span>
+                        <span class="proyecto-card-desc" data-i18n="card.bw.desc">Landing en inglés para una clínica de Chicago, con cuenta regresiva de la promoción y un único objetivo: reservar el turno.</span>
                         <span class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
-                        <span class="proyecto-card-cta">Ver sitio <span aria-hidden="true">↗</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="card.versitio">Ver sitio</span> <span aria-hidden="true">↗</span></span>
                     </span>
                 </a>
             </article>
@@ -264,7 +270,7 @@
                         <span class="proyecto-card-title">Nombre del cliente</span>
                         <span class="proyecto-card-desc">Una o dos líneas sobre qué resolvía el sitio.</span>
                         <span class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
-                        <span class="proyecto-card-cta">Ver sitio <span aria-hidden="true">↗</span></span>
+                        <span class="proyecto-card-cta"><span data-i18n="card.versitio">Ver sitio</span> <span aria-hidden="true">↗</span></span>
                     </span>
                 </a>
             </article>
@@ -272,21 +278,22 @@
             -->
         </div>
 
-        <p class="proyectos-vacio" id="proyectos-vacio" hidden>
+        <p class="proyectos-vacio" id="proyectos-vacio" hidden data-i18n="proy.vacio">
             No hay proyectos de ese tipo todavía.
         </p>
 
         <section class="pagina-cta">
-            <h2>¿Querés uno así para tu negocio?</h2>
-            <p>Contame qué necesitás y te respondo con una propuesta concreta.</p>
+            <h2 data-i18n="proy.cta.tit">¿Querés uno así para tu negocio?</h2>
+            <p data-i18n="proy.cta.desc">Contame qué necesitás y te respondo con una propuesta concreta.</p>
             <a href="index.html#contact" class="btn-arrow magnetic-link">
-                Hablemos <span aria-hidden="true">→</span>
+                <span data-i18n="proy.cta.btn">Hablemos</span> <span aria-hidden="true">→</span>
             </a>
         </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

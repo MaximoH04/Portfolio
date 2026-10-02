@@ -745,3 +745,23 @@ body.nav-open { overflow: hidden; }
     font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
     color: var(--text-dim);
 }
+
+/* Selector de idioma, al lado del switch de tema */
+.lang-toggle {
+    background: none; border: 1px solid currentColor; border-radius: 50px;
+    padding: 4px; color: inherit; flex-shrink: 0;
+    display: flex; align-items: center; gap: 2px;
+    font-family: var(--font-body);
+}
+.lang-opt {
+    display: block; padding: 3px 9px; border-radius: 50px;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 1px;
+    opacity: 0.45;
+    transition: opacity 0.25s ease, background 0.25s ease;
+}
+.lang-opt.is-active {
+    opacity: 1;
+    background: var(--text);
+    color: var(--bg);
+}
+.lang-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }

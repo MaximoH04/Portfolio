@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximo Hidalgo | Desarrollador web y sistemas a medida</title>
-    <meta name="description" content="Desarrollador web freelance en Buenos Aires. Hago sitios web, landing pages y sistemas a medida para negocios: relevo la necesidad, propongo la solución y la desarrollo.">
+    <title data-i18n="meta.title">Maximo Hidalgo | Desarrollador web y sistemas a medida</title>
+    <meta name="description" data-i18n-content="meta.desc" content="Desarrollador web freelance en Buenos Aires. Hago sitios web, landing pages y sistemas a medida para negocios: relevo la necesidad, propongo la solución y la desarrollo.">
+    <link rel="alternate" hreflang="es" href="https://portfolio-maximo-hidalgo.vercel.app/">
+    <link rel="alternate" hreflang="en" href="https://portfolio-maximo-hidalgo.vercel.app/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://portfolio-maximo-hidalgo.vercel.app/">
     <meta name="author" content="Maximo Hidalgo">
     <link rel="canonical" href="https://portfolio-maximo-hidalgo.vercel.app/">
 
@@ -36,7 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <a href="#main" class="skip-link" data-i18n="skip">Saltar al contenido</a>
 
     <div class="noise-overlay" aria-hidden="true"></div>
 
@@ -46,22 +49,26 @@
     <header class="top-header">
         <a href="#home" class="logo">Maximo Hidalgo</a>
 
-        <nav class="desktop-nav" aria-label="Navegación principal">
-            <a href="#work">Proyectos</a>
-            <a href="#experience">Experiencia</a>
-            <a href="#services">Servicios</a>
-            <a href="#about">Sobre mí</a>
-            <a href="#contact">Contacto</a>
+        <nav class="desktop-nav" aria-label="Navegación principal" data-i18n-label="nav.aria">
+            <a href="#work" data-i18n="nav.proyectos">Proyectos</a>
+            <a href="#experience" data-i18n="nav.experiencia">Experiencia</a>
+            <a href="#services" data-i18n="nav.servicios">Servicios</a>
+            <a href="#about" data-i18n="nav.sobre">Sobre mí</a>
+            <a href="#contact" data-i18n="nav.contacto">Contacto</a>
         </nav>
 
         <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
-            <span class="visually-hidden">Abrir menú</span>
+            <span class="visually-hidden" data-i18n="nav.abrir">Abrir menú</span>
             <span class="nav-toggle-bar" aria-hidden="true"></span>
             <span class="nav-toggle-bar" aria-hidden="true"></span>
         </button>
 
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma a inglés">
+            <span class="lang-opt" data-lang="es">ES</span>
+            <span class="lang-opt" data-lang="en">EN</span>
+        </button>
         <button type="button" class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false">
-            <span class="visually-hidden">Modo claro</span>
+            <span class="visually-hidden" data-i18n="tema.claro">Modo claro</span>
             <span class="theme-toggle-track" aria-hidden="true">
                 <span class="theme-toggle-knob"></span>
                 <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24">
@@ -77,13 +84,13 @@
     </header>
 
     <!-- Menú móvil: el nav de escritorio desaparecía sin reemplazo -->
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
-        <a href="#work">Proyectos</a>
-        <a href="#experience">Experiencia</a>
-        <a href="#services">Servicios</a>
-        <a href="#education">Formación y skills</a>
-        <a href="#about">Sobre mí</a>
-        <a href="#contact">Contacto</a>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" data-i18n-label="nav.aria.movil" hidden>
+        <a href="#work" data-i18n="nav.proyectos">Proyectos</a>
+        <a href="#experience" data-i18n="nav.experiencia">Experiencia</a>
+        <a href="#services" data-i18n="nav.servicios">Servicios</a>
+        <a href="#education" data-i18n="nav.formacion">Formación y skills</a>
+        <a href="#about" data-i18n="nav.sobre">Sobre mí</a>
+        <a href="#contact" data-i18n="nav.contacto">Contacto</a>
     </nav>
 
     <main id="main">
@@ -94,12 +101,12 @@
                     <span class="linea outline-text"><span>HIDALGO</span></span>
                 </h1>
                 <div class="hero-sub">
-                    <p>
+                    <p data-i18n="hero.sub">
                         Desarrollador web en Buenos Aires. Hago sitios y sistemas a medida:
                         relevo la necesidad con el cliente, propongo la solución y la desarrollo.
                     </p>
                     <div class="scroll-indicator" aria-hidden="true">
-                        <span>Scroll</span>
+                        <span data-i18n="hero.scroll">Scroll</span>
                         <div class="line"></div>
                     </div>
                 </div>
@@ -110,40 +117,40 @@
             <div class="container">
                 <div class="section-title">
                     <span class="index">01</span>
-                    <h2>Proyectos</h2>
+                    <h2 data-i18n="work.titulo">Proyectos</h2>
                 </div>
 
                 <article class="project-row project-featured">
                     <div class="project-info">
                         <p class="badge-destacado">
                             <span class="badge-punto" aria-hidden="true"></span>
-                            Proyecto destacado
+                            <span data-i18n="work.badge">Proyecto destacado</span>
                         </p>
                         <p class="project-client">
                             <img src="assets/images/afa-escudo.webp"
-                                 alt="Escudo de la Asociación del Fútbol Argentino"
+                                 alt="Escudo de la Asociación del Fútbol Argentino" data-i18n-alt="caso.afa.escudo.alt"
                                  class="client-logo" width="60" height="76" loading="lazy">
-                            Asociación del Fútbol Argentino (AFA)
+                            <span data-i18n="afa.cliente">Asociación del Fútbol Argentino (AFA)</span>
                         </p>
-                        <h3>Control de Acceso <br>por DNI</h3>
-                        <p>
+                        <h3 data-i18n="afa.titulo">Control de Acceso <br>por DNI</h3>
+                        <p data-i18n="afa.desc">
                             Sistema para registrar el ingreso de personas a las oficinas de la AFA
                             leyendo el código PDF417 del DNI, con historial por visitante y
                             exportación a Excel. Lo encaré solo, de punta a punta: relevamiento
                             en las oficinas del cliente, análisis funcional, propuesta y desarrollo.
                         </p>
                         <div class="tags">
-                            <span>Python</span><span>PDF417</span><span>Excel</span><span>Análisis funcional</span>
+                            <span>Python</span><span>PDF417</span><span>Excel</span><span data-i18n="caso.afa.tag.analisis">Análisis funcional</span>
                         </div>
                         <a href="caso-control-acceso-dni.html" class="btn-arrow magnetic-link">
-                            Ver caso <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            <span data-i18n="btn.vercaso">Ver caso</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="project-img parallax-img-container">
                         <!-- TODO: reemplazar por una captura real de la interfaz cuando haya una.
                              Ilustración genérica a propósito: sin datos del cliente. -->
                         <img src="assets/images/proyecto-afa-dni.webp"
-                             alt="Ilustración de la interfaz: un documento con código de barras PDF417 siendo escaneado, junto a un panel con el registro de entradas y salidas"
+                             alt="Ilustración de la interfaz: un documento con código de barras PDF417 siendo escaneado, junto a un panel con el registro de entradas y salidas" data-i18n-alt="afa.img.alt"
                              class="parallax-img" width="1200" height="760" loading="lazy" decoding="async">
                     </div>
                 </article>
@@ -151,11 +158,11 @@
                 <article class="project-row reverse">
                     <div class="project-info">
                         <p class="project-client">
-                            App mobile
-                            <span class="badge-estado">En pausa</span>
+                            <span data-i18n="altoque.meta">App mobile</span>
+                            <span class="badge-estado" data-i18n="altoque.badge">En pausa</span>
                         </p>
                         <h3>Al Toque!</h3>
-                        <p>
+                        <p data-i18n="altoque.desc">
                             App que conecta clientes con trabajadores verificados de distintos
                             rubros: servicios generales, servicios profesionales y alquiler de
                             herramientas y equipos. Tiene verificación de identidad, chat
@@ -165,24 +172,24 @@
                             <span>React Native</span><span>Expo</span><span>Mobile</span>
                         </div>
                         <a href="caso-al-toque.html" class="btn-arrow magnetic-link">
-                            Ver caso <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            <span data-i18n="btn.vercaso">Ver caso</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="project-img parallax-img-container">
                         <img src="assets/images/proyecto-altoque.webp"
-                             alt="Portada de Al Toque!, con el titular «Servicios al toque de un botón» y el mockup de la app en un teléfono"
+                             alt="Portada de Al Toque!, con el titular «Servicios al toque de un botón» y el mockup de la app en un teléfono" data-i18n-alt="altoque.img.alt"
                              class="parallax-img" width="1200" height="760" loading="lazy" decoding="async">
                     </div>
                 </article>
 
                 <div class="work-mas">
-                    <p>
+                    <p data-i18n="work.mas">
                         Estos son los dos que mejor cuentan cómo trabajo. Hay más sitios
                         para clientes, entre portfolios, landings e institucionales, en la
                         página de proyectos.
                     </p>
                     <a href="proyectos.html" class="btn-arrow magnetic-link">
-                        Ver todos los proyectos <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <span data-i18n="work.vertodos">Ver todos los proyectos</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -192,15 +199,15 @@
             <div class="container">
                 <div class="section-title">
                     <span class="index">02</span>
-                    <h2>Experiencia</h2>
+                    <h2 data-i18n="exp.titulo">Experiencia</h2>
                 </div>
 
                 <ol class="timeline">
                     <li class="timeline-item">
-                        <p class="timeline-date">Marzo 2026 a la actualidad</p>
-                        <h3 class="timeline-role">Analista de Éxito del Cliente</h3>
-                        <p class="timeline-org">Grupo Cormos · Software de salud</p>
-                        <p class="timeline-desc">
+                        <p class="timeline-date" data-i18n="exp.cormos.fecha">Marzo 2026 a la actualidad</p>
+                        <h3 class="timeline-role" data-i18n="exp.cormos.rol">Analista de Éxito del Cliente</h3>
+                        <p class="timeline-org" data-i18n="exp.cormos.org">Grupo Cormos · Software de salud</p>
+                        <p class="timeline-desc" data-i18n="exp.cormos.desc">
                             Trabajo en la retención de clientes: entiendo cómo usan el servicio,
                             negocio renovaciones y armo los informes con los que se siguen las
                             cuentas.
@@ -208,10 +215,10 @@
                     </li>
 
                     <li class="timeline-item">
-                        <p class="timeline-date">Enero a junio de 2025 · Remoto</p>
-                        <h3 class="timeline-role">Auxiliar Administrativo y Desarrollador</h3>
+                        <p class="timeline-date" data-i18n="exp.nimat.fecha">Enero a junio de 2025 · Remoto</p>
+                        <h3 class="timeline-role" data-i18n="exp.nimat.rol">Auxiliar Administrativo y Desarrollador</h3>
                         <p class="timeline-org">Nimat Solutions</p>
-                        <p class="timeline-desc">
+                        <p class="timeline-desc" data-i18n="exp.nimat.desc">
                             Diseñé y desarrollé el sitio web de la empresa, y el sistema de
                             control de acceso para la Asociación del Fútbol Argentino (AFA).
                             En paralelo, atención a clientes, soporte técnico y el control
@@ -221,10 +228,10 @@
 
                     <li class="timeline-item">
                         <!-- TODO: falta la fecha de inicio del freelance -->
-                        <p class="timeline-date">Actualidad</p>
-                        <h3 class="timeline-role">Desarrollador web y servicio técnico</h3>
-                        <p class="timeline-org">Freelance</p>
-                        <p class="timeline-desc">
+                        <p class="timeline-date" data-i18n="exp.free.fecha">Actualidad</p>
+                        <h3 class="timeline-role" data-i18n="exp.free.rol">Desarrollador web y servicio técnico</h3>
+                        <p class="timeline-org" data-i18n="exp.free.org">Freelance</p>
+                        <p class="timeline-desc" data-i18n="exp.free.desc">
                             Sitios web para clientes, de la primera charla a la entrega. También
                             reparación de PCs e instalación de software.
                         </p>
@@ -237,10 +244,10 @@
             <div class="container">
                 <div class="section-title">
                     <span class="index">03</span>
-                    <h2>Servicios</h2>
+                    <h2 data-i18n="serv.titulo">Servicios</h2>
                 </div>
 
-                <p class="section-intro">
+                <p class="section-intro" data-i18n="serv.intro">
                     Si tenés un negocio y no sabés bien qué necesitás, no hay drama:
                     arrancamos por charlar sobre el problema y yo te propongo cómo resolverlo.
                     Sin términos raros.
@@ -249,8 +256,8 @@
                 <ul class="servicios">
                     <li class="servicio">
                         <span class="servicio-num" aria-hidden="true">01</span>
-                        <h3>Sitios web y landing pages</h3>
-                        <p>
+                        <h3 data-i18n="serv.1.tit">Sitios web y landing pages</h3>
+                        <p data-i18n="serv.1.desc">
                             La presencia online de tu negocio: un sitio que explique qué hacés,
                             que se vea bien en el celular y que le haga fácil al cliente
                             escribirte.
@@ -258,8 +265,8 @@
                     </li>
                     <li class="servicio">
                         <span class="servicio-num" aria-hidden="true">02</span>
-                        <h3>Sistemas a medida</h3>
-                        <p>
+                        <h3 data-i18n="serv.2.tit">Sistemas a medida</h3>
+                        <p data-i18n="serv.2.desc">
                             Cuando lo que necesitás no viene hecho. Por ejemplo: control de
                             acceso de personas, registros internos, planillas que hoy se cargan
                             a mano o exportación de datos a Excel.
@@ -267,8 +274,8 @@
                     </li>
                     <li class="servicio">
                         <span class="servicio-num" aria-hidden="true">03</span>
-                        <h3>Mantenimiento y soporte técnico</h3>
-                        <p>
+                        <h3 data-i18n="serv.3.tit">Mantenimiento y soporte técnico</h3>
+                        <p data-i18n="serv.3.desc">
                             Para que lo que ya tenés siga funcionando: cambios y actualizaciones
                             en tu sitio, reparación de PCs e instalación de software.
                         </p>
@@ -276,9 +283,9 @@
                 </ul>
 
                 <div class="servicios-cta">
-                    <p>¿Tenés algo en mente?</p>
+                    <p data-i18n="serv.cta">¿Tenés algo en mente?</p>
                     <a href="#contact" class="btn-arrow magnetic-link">
-                        Contame tu proyecto <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <span data-i18n="serv.cta.btn">Contame tu proyecto</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -288,34 +295,34 @@
             <div class="container">
                 <div class="section-title">
                     <span class="index">04</span>
-                    <h2>Formación y skills</h2>
+                    <h2 data-i18n="form.titulo">Formación y skills</h2>
                 </div>
 
                 <div class="perfil-grid">
                     <div class="perfil-col">
-                        <h3 class="perfil-sub">Formación</h3>
+                        <h3 class="perfil-sub" data-i18n="form.sub">Formación</h3>
                         <ul class="formacion">
                             <li>
-                                <p class="formacion-date">Agosto 2026 a la actualidad</p>
-                                <h4>Analista de Sistemas</h4>
+                                <p class="formacion-date" data-i18n="form.davinci.fecha">Agosto 2026 a la actualidad</p>
+                                <h4 data-i18n="form.davinci.tit">Analista de Sistemas</h4>
                                 <p class="formacion-org">Escuela Da Vinci</p>
                             </li>
                             <li>
-                                <p class="formacion-date">2023 a 2026</p>
-                                <h4>Lic. en Gestión de Tecnología de la Información</h4>
+                                <p class="formacion-date" data-i18n="form.uade.fecha">2023 a 2026</p>
+                                <h4 data-i18n="form.uade.tit">Lic. en Gestión de Tecnología de la Información</h4>
                                 <p class="formacion-org">UADE</p>
-                                <p class="formacion-nota">
+                                <p class="formacion-nota" data-i18n="form.uade.nota">
                                     Cursé hasta 2026 y continué mi formación como Analista de
                                     Sistemas en Da Vinci.
                                 </p>
                             </li>
                             <li>
-                                <p class="formacion-date">2017 a 2022</p>
-                                <h4>Bachiller en Ciencias Sociales</h4>
+                                <p class="formacion-date" data-i18n="form.sec.fecha">2017 a 2022</p>
+                                <h4 data-i18n="form.sec.tit">Bachiller en Ciencias Sociales</h4>
                                 <p class="formacion-org">Colegio Secundario El Encuentro</p>
                             </li>
                             <li>
-                                <p class="formacion-date">Inglés · B2</p>
+                                <p class="formacion-date" data-i18n="form.ingles.fecha">Inglés · B2</p>
                                 <h4>First Certificate in English (FCE)</h4>
                                 <p class="formacion-org">Cambridge</p>
                             </li>
@@ -325,10 +332,10 @@
                     </div>
 
                     <div class="perfil-col">
-                        <h3 class="perfil-sub">Skills</h3>
+                        <h3 class="perfil-sub" data-i18n="skills.sub">Skills</h3>
                         <div class="skills-stack">
                             <div class="skills-group">
-                                <h4>Técnicas</h4>
+                                <h4 data-i18n="skills.tecnicas">Técnicas</h4>
                                 <ul>
                                     <li>Python</li><li>Java</li><li>SQL / MySQL</li>
                                     <li>HTML</li><li>CSS</li><li>JavaScript</li>
@@ -337,7 +344,7 @@
                                 </ul>
                             </div>
                             <div class="skills-group">
-                                <h4>Herramientas</h4>
+                                <h4 data-i18n="skills.herramientas">Herramientas</h4>
                                 <ul>
                                     <li>VS Code</li><li>IntelliJ IDEA</li>
                                     <li>Figma</li><li>Photoshop</li><li>Canva</li>
@@ -346,17 +353,17 @@
                                 </ul>
                             </div>
                             <div class="skills-group">
-                                <h4>Blandas</h4>
+                                <h4 data-i18n="skills.blandas">Blandas</h4>
                                 <ul>
-                                    <li>Gestión de proyectos</li>
-                                    <li>Comunicación con clientes</li>
-                                    <li>Trabajo en equipo</li>
-                                    <li>Atención al detalle</li>
+                                    <li data-i18n="skills.gestion">Gestión de proyectos</li>
+                                    <li data-i18n="skills.comunicacion">Comunicación con clientes</li>
+                                    <li data-i18n="skills.equipo">Trabajo en equipo</li>
+                                    <li data-i18n="skills.detalle">Atención al detalle</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <h3 class="perfil-sub">Certificaciones</h3>
+                        <h3 class="perfil-sub" data-i18n="cert.sub">Certificaciones</h3>
                         <ul class="certs-list">
                             <li>
                                 <div>
@@ -366,30 +373,30 @@
                             </li>
                             <li>
                                 <div>
-                                    <h4>Google Ads Búsqueda</h4>
+                                    <h4 data-i18n="cert.ads.search">Google Ads Búsqueda</h4>
                                     <p class="cert-org">Google Skillshop · Sept. 2025 · ID 160103568</p>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <h4>Foundations of Project Management</h4>
+                                    <h4 data-i18n="cert.pm">Foundations of Project Management</h4>
                                     <p class="cert-org">Google · Coursera</p>
                                 </div>
                                 <a href="https://www.coursera.org/account/accomplishments/verify/ESX88VDP9PPK"
                                    class="cert-link" target="_blank" rel="noopener noreferrer">
-                                    Ver credencial
+                                    <span data-i18n="cert.ver">Ver credencial</span>
                                     <span class="visually-hidden">de Foundations of Project Management</span>
                                     <span aria-hidden="true">↗</span>
                                 </a>
                             </li>
                             <li>
                                 <div>
-                                    <h4>Argentina Programa</h4>
+                                    <h4 data-i18n="cert.ap">Argentina Programa</h4>
                                     <p class="cert-org">INTI · 2022</p>
                                 </div>
                                 <a href="https://seprogramar.inti.gob.ar/inti/certificates/verify/ujbnkrr4zQ6If7pf"
                                    class="cert-link" target="_blank" rel="noopener noreferrer">
-                                    Ver credencial
+                                    <span data-i18n="cert.ver">Ver credencial</span>
                                     <span class="visually-hidden">de Argentina Programa</span>
                                     <span aria-hidden="true">↗</span>
                                 </a>
@@ -408,41 +415,41 @@
             <div class="container about-brief">
                 <div class="section-title">
                     <span class="index">05</span>
-                    <h2>Sobre mí</h2>
+                    <h2 data-i18n="about.titulo">Sobre mí</h2>
                 </div>
 
                 <div class="about-grid">
                     <figure class="about-foto">
                         <img src="assets/images/maximo-perfil.webp"
-                             alt="Retrato de Maximo Hidalgo"
+                             alt="Retrato de Maximo Hidalgo" data-i18n-alt="about.foto.alt"
                              width="900" height="700" loading="lazy" decoding="async">
                     </figure>
 
                     <div class="about-texto">
-                        <p class="big-statement">
+                        <p class="big-statement" data-i18n="about.p1">
                             Soy Maximo. Vivo en Buenos Aires, estudio
                             <span class="highlight">Analista de Sistemas</span> y trabajo como
                             desarrollador web, con foco en la
                             <span class="highlight">gestión de proyectos</span>.
                         </p>
-                        <p>
+                        <p data-i18n="about.p2">
                             Lo que mejor me sale no es una tecnología en particular: es agarrar
                             un proyecto de punta a punta. Me siento con vos a entender qué
                             necesitás de verdad, te propongo una solución y después la
                             desarrollo. Si algo no conviene, te lo digo; si hay un camino más
                             simple, también.
                         </p>
-                        <p>
+                        <p data-i18n="about.p3">
                             Trato de explicar todo en castellano, sin jerga. Me parece que un
                             cliente tiene que entender qué está pagando y por qué, sin tener que
                             creerme nada de memoria.
                         </p>
-                        <p>
+                        <p data-i18n="about.p4">
                             Fuera del teclado soy músico: canto, toco la guitarra y compongo.
                         </p>
 
                         <a href="assets/CV_Maximo_Hidalgo_2026.pdf" class="btn-circle magnetic-link" download>
-                            Descargar<br>CV
+                            <span data-i18n="about.cv">Descargar<br>CV</span>
                         </a>
                     </div>
                 </div>
@@ -451,9 +458,9 @@
 
         <footer id="contact" class="footer-big">
             <div class="container">
-                <p class="footer-eyebrow">06 · Contacto</p>
-                <h2>Hablemos</h2>
-                <p class="footer-intro">
+                <p class="footer-eyebrow" data-i18n="contacto.eyebrow">06 · Contacto</p>
+                <h2 data-i18n="contacto.titulo">Hablemos</h2>
+                <p class="footer-intro" data-i18n="contacto.intro">
                     Contame qué necesitás y te respondo con una propuesta concreta.
                     Si te queda más cómodo, escribime por WhatsApp.
                 </p>
@@ -472,7 +479,7 @@
                         <a href="" class="magnetic-link" target="_blank" rel="noopener noreferrer">Instagram</a>
                         -->
                     </div>
-                    <p>© 2026 Maximo Hidalgo · Buenos Aires, Argentina</p>
+                    <p data-i18n="contacto.copy">© 2026 Maximo Hidalgo · Buenos Aires, Argentina</p>
                 </div>
             </div>
         </footer>
@@ -480,6 +487,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
