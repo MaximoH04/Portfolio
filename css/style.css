@@ -718,7 +718,13 @@ body.nav-open { overflow: hidden; }
 
 .project-info .project-client {
     font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 14px;
+    color: var(--accent); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 14px;
+}
+/* El escudo del cliente, para que se reconozca de un vistazo */
+.client-logo {
+    width: 58px; height: auto; flex-shrink: 0;
+    filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.35));
 }
 .project-featured .project-info h3 { font-size: clamp(1.9rem, 3.9vw, 3.1rem); }
 
@@ -730,3 +736,12 @@ body.nav-open { overflow: hidden; }
     pointer-events: none;
 }
 .about-foto { clip-path: inset(0%); }
+
+/* Badge de estado del proyecto (por ejemplo, "En pausa") */
+.badge-estado {
+    display: inline-block; vertical-align: middle;
+    margin-left: 10px; padding: 3px 11px;
+    border: 1px solid var(--border-strong); border-radius: 50px;
+    font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-dim);
+}

@@ -162,3 +162,17 @@
 @media (max-width: 680px) {
     .caso-fotos { grid-template-columns: 1fr; gap: 28px; }
 }
+
+/* Cliente con escudo, arriba del título del caso */
+.caso-cliente {
+    display: flex; align-items: center; gap: 20px; margin-bottom: 26px;
+}
+.caso-cliente img {
+    width: 78px; height: auto; flex-shrink: 0;
+    filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.35));
+}
+.caso-cliente .caso-eyebrow { margin-bottom: 0; line-height: 1.7; }
+.caso-cliente .caso-eyebrow span { color: var(--text-dim); letter-spacing: 1.5px; }
+
+/* Figura secundaria dentro de un bloque */
+.caso-figura-secundaria { margin: 44px 0 0; }
