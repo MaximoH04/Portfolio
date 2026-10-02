@@ -60,6 +60,44 @@
         });
     };
 
+    /* ---------- Navbar: estado al scrollear + sección activa ---------- */
+    const initNavbar = () => {
+        const header = document.querySelector('.top-header');
+        if (!header) return;
+
+        // Estado compacto apenas se despega del tope.
+        const marcarScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
+        marcarScroll();
+        window.addEventListener('scroll', marcarScroll, { passive: true });
+
+        // Resaltado de la sección visible. Sólo tiene sentido en la portada,
+        // donde los enlaces del nav son anclas de esta misma página.
+        const enlaces = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
+        if (!enlaces.length || !('IntersectionObserver' in window)) return;
+
+        const porId = new Map();
+        const secciones = [];
+        enlaces.forEach((a) => {
+            const sec = document.querySelector(a.getAttribute('href'));
+            if (sec) { porId.set(sec.id, a); secciones.push(sec); }
+        });
+
+        const visibles = new Set();
+        const obs = new IntersectionObserver((entradas) => {
+            entradas.forEach((e) => {
+                if (e.isIntersecting) visibles.add(e.target.id);
+                else visibles.delete(e.target.id);
+            });
+
+            // Si hay varias en pantalla, gana la que está más arriba.
+            const activa = secciones.find((s) => visibles.has(s.id));
+            enlaces.forEach((a) => a.classList.remove('is-active'));
+            if (activa && porId.has(activa.id)) porId.get(activa.id).classList.add('is-active');
+        }, { rootMargin: '-45% 0px -45% 0px' });
+
+        secciones.forEach((s) => obs.observe(s));
+    };
+
     /* ---------- Menú móvil ---------- */
     const initMobileNav = () => {
         const toggle = document.querySelector('.nav-toggle');
@@ -203,6 +241,7 @@
     /* ---------- Arranque ---------- */
     document.addEventListener('DOMContentLoaded', () => {
         initTheme();
+        initNavbar();
         initMobileNav();
         initFiltros();
 
